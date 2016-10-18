@@ -541,8 +541,8 @@ body.nav-on #page {
   color: #fff;
   z-index: 10;
   background: url(../images/header.jpg);
-  -webkit-background-size: cover; 
-  background-size: cover; 
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 #home:before {
@@ -740,7 +740,10 @@ body.nav-on #page {
   letter-spacing: .25em;
   margin-bottom: .2em;
 }
-
+.service-item-title:after {
+  content: " ?";
+  white-space:nowrap;
+}
 
 /*
     Contacts
