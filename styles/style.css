@@ -21,7 +21,7 @@ html {
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, /*h3,*/, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -40,7 +40,7 @@ table {
   margin-bottom: 1.778em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, /*h3,*/ h4, h5, h6 {
   font-family: "Merriweather", serif;
   font-weight: 700;
   color: #1c2031;
@@ -91,26 +91,26 @@ h2 {
   }
 }
 
-h3 {
+/*h3 {
   font-size: 21.5462053505px;
   margin-top: 1.3409553808em;
   line-height: 1.6091464569em;
   margin-bottom: 0.3055328361em;
-}
+}*/
 
 @media (min-width: 300px) {
-  h3 {
+  /*h3 {
     font-size: calc( 21.5462053505px + (26.5184065853 - 21.5462053505) * ((100vw - 300px) / (1170 - 300)));
-  }
+  }*/
 }
 
 @media (min-width: 1170px) {
-  h3 {
+  /*h3 {
     font-size: 26.5184065853px;
     margin-top: 1.3409553808em;
     line-height: 1.6091464569em;
     margin-bottom: 0.2985312561em;
-  }
+  }*/
 }
 
 h4 {
@@ -541,8 +541,8 @@ body.nav-on #page {
   color: #fff;
   z-index: 10;
   background: url(../images/header.jpg);
-  -webkit-background-size: cover; 
-  background-size: cover; 
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 #home:before {
