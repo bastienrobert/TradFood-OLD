@@ -934,6 +934,9 @@ body.nav-on #page {
   .contact-info-title {
     margin: 1em 0 .6em 0!important;
   }
+  #home-main .home-texts {
+    width: 100%!important;
+  }
 }
 
 @media only screen and (max-width: 640px) {
