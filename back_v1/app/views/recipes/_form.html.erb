@@ -1,0 +1,66 @@
+<%= form_for(recipe) do |f| %>
+  <% if recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :recipe %>
+    <%= f.text_area :recipe, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prepare %>
+    <%= f.time_select :prepare, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cook %>
+    <%= f.time_select :cook, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :smcd %>
+    <%= f.text_field :smcd, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :difficulty %>
+    <%= f.number_field :difficulty, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :season %>
+    <%= f.text_field :season, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

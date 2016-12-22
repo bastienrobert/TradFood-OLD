@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: 2016-12-22
+  description: MyText
+  recipe: MyText
+  prepare: 2016-12-22 23:01:16
+  cook: 2016-12-22 23:01:16
+  type: 
+  difficulty: 1
+  season: MyString
+
+two:
+  name: MyString
+  date: 2016-12-22
+  description: MyText
+  recipe: MyText
+  prepare: 2016-12-22 23:01:16
+  cook: 2016-12-22 23:01:16
+  type: 
+  difficulty: 1
+  season: MyString
