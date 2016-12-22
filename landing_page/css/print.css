@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-style: normal;
+    text-decoration: none
+}
+
+body {
+    font-family: Lato, Arial, Helvetica, serif;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase
+    background-color: #fff;
+}
+
+a {
+    transition: border .1s
+}
+
+.glob {
+    margin: auto
+}
+
+.wrap {
+    width: 100%;
+    height: 100%
+}
+
+#cookies {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    vertical-align: middle;
+    text-align: center;
+    min-height: 30px;
+    line-height: 30px;
+    background-color: #FFF;
+}
+
+.main-title {
+    font-size: 1em;
+    color: #000;
+    font-weight: 700;
+    transition: all .3s
+}
+
+.main-title .important {
+    color: #e74c3c
+}
+.section-firstPage .glob, .section-lastPage .glob {
+    text-align: center
+}
+
+.section-firstPage .glob {
+    margin-top: -150px
+}
+
+.section-firstPage .glob .picture {
+    display: inline-block;
+    height: 140px
+}
+
+
+.section-lastPage .newsletter-link {
+    color: #e74c3c;
+    padding-bottom: 2px;
+    transition: border .2s
+}
+
+.section-lastPage .social-nav .link {
+    color: #000;
+    font-size: 10px;
+    line-height: 30px;
+    margin: 0 15px;
+    padding-bottom: 2px;
+    transition: border .2s, color .2s
+}
+
+.section-lastPage .footer {
+    text-align: center;
+    bottom: 3%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #000
+}
+
+.section-lastPage .footer .copyright {
+    font-size: 10px;
+}
+
+.section-lastPage .footer .thanks {
+    font-size: 10px;
+    text-transform: none;
+    font-family: Arial, serif;
+    letter-spacing: 0
+}
+
+.aLeft {
+    text-align: left
+}
+
+.aMiddle {
+    text-align: center
+}
+
+.aMiddle img {
+    width: 30%
+}
+
+.aRight {
+    text-align: right
+}
+
+.column .title {
+    font-size: 1.2em;
+    color: #000;
+    transition: all .3s;
+    padding-bottom: .2em
+}
+
+.column .description, .column .number {
+    color: #000;
+    opacity: .6;
+    transition: all .3s
+}
+
+.column .description {
+    font-size: 1em;
+  }
+
+.section {
+    padding-left: 150px;
+    padding-right: 150px
+}
+
+.section-white .description, .section-white .number {
+    opacity: .8;
+    color: #e74c3c
+}
+
+.section-white .title {
+    color: #333
+}
+
+.iut-bdx {
+    color: #e74c3c
+}
+
+.heart {
+    height: 20px;
+    vertical-align: -6px
+}
+.mouse {
+  display: none;
+}
+/* Ecraser les hauteur du CSS */
+.fp-section, .fp-tableCell {
+  height: auto!important
+}
