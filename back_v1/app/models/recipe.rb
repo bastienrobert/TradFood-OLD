@@ -6,4 +6,5 @@ class Recipe < ApplicationRecord
   }
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_size :image, :less_than => 4.megabytes
 end

@@ -17,6 +17,15 @@
   </div>
 
   <div class="field">
+    <%= f.label :city %>
+    <%= f.select(:city) do %>
+      <% City.all.each do |city| -%>
+        <%= content_tag(:option, city.name, value: city.name) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= f.label :date %>
     <%= f.date_select :date, required: true %>
   </div>
