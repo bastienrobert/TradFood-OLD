@@ -66,6 +66,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :status %>
+    <%= f.number_field :status, required: true %>
+  </div>
+
+  <div class="field">
     <%= f.file_field :image, required: true %>
   </div>
 

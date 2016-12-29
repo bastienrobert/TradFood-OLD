@@ -10,6 +10,7 @@ class CreateRecipes < ActiveRecord::Migration[5.0]
       t.time :cook
       t.string :smcd
       t.integer :difficulty
+      t.integer :status
       t.string :season
 
       t.timestamps

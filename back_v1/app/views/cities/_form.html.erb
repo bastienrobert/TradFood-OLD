@@ -22,6 +22,20 @@
   </div>
 
   <div class="field">
+    <%= f.label :status %>
+    <%= f.number_field :status, required: true %>
+  </div>
+
+  <!-- <div class="field">
+    <%= f.label :status %>
+    <%= f.select(:status) do %>
+      <% [['Draft', 0], ['Publish', 1], ['Star', 2], ['Delete', 3]].each do |s| -%>
+        <%= content_tag(:option, s.first, value: s.last) %>
+      <% end %>
+    <% end %>
+  </div> -->
+
+  <div class="field">
     <%= f.file_field :image, required: true %>
   </div>
 
