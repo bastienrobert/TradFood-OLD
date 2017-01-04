@@ -10,45 +10,16 @@
   <%= @city.description %>
 </p>
 
+<p>
+  <strong>Status:</strong>
+  <%= @city.status %>
+</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>City</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Recipe</th>
-      <th>Prepare</th>
-      <th>Cook</th>
-      <th>SMCD</th>
-      <th>Difficulty</th>
-      <th>Season</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= image_tag recipe.image.url(:small) %></td>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.city %></td>
-        <td><%= recipe.date %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.recipe %></td>
-        <td><%= recipe.prepare %></td>
-        <td><%= recipe.cook %></td>
-        <td><%= recipe.smcd %></td>
-        <td><%= recipe.difficulty %></td>
-        <td><%= recipe.season %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<p>
+  <strong>Image:</strong><br>
+  <%= image_tag @city.image.url(:small) %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_city_path(@city) %> |

@@ -4,6 +4,7 @@ class PagesController < ApplicationController
    end
    def home
      @cities = City.all
+     @citiesStared = City.where(status:2)
      @recipes = Recipe.all
    end
  end

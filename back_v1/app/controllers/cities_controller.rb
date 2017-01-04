@@ -2,6 +2,12 @@ class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
+  # POST /search
+  def search
+    city = City.search(params[:search][:city]).first
+    redirect_to city_path(city)
+  end
+
   # GET /cities
   # GET /cities.json
   def index
@@ -71,7 +77,7 @@ class CitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def city_params
-      params.require(:city).permit(:name, :description, :image)
+      params.require(:city).permit(:name, :description, :image, :status)
     end
 
 end

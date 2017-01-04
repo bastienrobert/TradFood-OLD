@@ -5,8 +5,13 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Devise gem (administration)
 gem 'devise'
-# Search Gem (searchkick w/ ElasticSearch)
+# Simpleform
+gem "simple_form"
+# Search Gem (elasticSearch)
+# gem 'elasticsearch-rails'
+# gem 'elasticsearch-model'
 gem 'searchkick'
+# Fix console access bugs
 gem 'rb-readline'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
@@ -25,7 +30,7 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+# gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
