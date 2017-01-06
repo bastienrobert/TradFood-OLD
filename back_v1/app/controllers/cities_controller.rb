@@ -5,6 +5,10 @@ class CitiesController < ApplicationController
   # POST /search
   def search
     city = City.search(params[:search][:city]).first
+    session[:searchSelect] = [params[:search][:smcd], params[:search][:difficulty], params[:search][:season]]
+    puts "======="
+    puts session[:searchSelect]
+    puts "======="
     redirect_to city_path(city)
   end
 

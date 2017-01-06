@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
-
+<br>
+<% puts "=======" %>
+<% searchSelect = session[:searchSelect] %>
+<% puts searchSelect %>
+<% puts "=======" %>
+<%= simple_form_for :sort do |f| %>
+  <%= f.input :smcd, label: "Type", collection: {'Tout' => 'all','Entrée' => 'starter','Plat' => 'mainCourse','Dessert' => 'dessert'}, html: {id: "type", name: "type"}, selected: searchSelect[0], required: false %>
+  <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 'easy','Moyen' => 'middle','Difficile' => 'difficult'}, html: {id: "difficulty", name: "difficulty"}, selected: searchSelect[1], required: false %>
+  <%= f.input :season, label: "Saison", collection: {'Tout' => 'all','Ete' => 'summer','Automne' => 'automn','Printemps' => 'sping', 'Hiver' => 'winter'}, html: {id: "season", name: "season"}, selected: searchSelect[2], required: false %>
+<% end %>
+<br>
 <p>
   <strong>Name:</strong>
   <%= @city.name %>

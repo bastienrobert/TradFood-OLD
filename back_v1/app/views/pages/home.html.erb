@@ -33,7 +33,7 @@
       </div>
 
       <div class="field for-type stop-bar">
-        <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 'easy','Moyen' => 'middle','Difficile' => 'difficul'}, html: {id: "difficulty", name: "difficulty"}, selected: "Tout", required: false %>
+        <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 'easy','Moyen' => 'middle','Difficile' => 'difficult'}, html: {id: "difficulty", name: "difficulty"}, selected: "Tout", required: false %>
       </div>
 
       <div class="field for-type">
@@ -48,13 +48,13 @@
     <h3>Les villes a l'affiche</h3>
     <div class="container">
       <% @citiesStared.each do |city| %>
-        <a href="#">
+        <%= link_to city do %>
           <div class="bloc" style="background-image:url(<%= city.image.url(:small) %>)">
             <ul>
               <li><%= city.name %></li>
             </ul>
           </div>
-        </a>
+        <% end %>
       <% end %>
     </div>
   </div>
