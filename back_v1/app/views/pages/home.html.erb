@@ -1,74 +1,99 @@
-<h1>Cities</h1>
-
-<%= simple_form_for :search, url: cities_search_path do |f| %>
-  <%= f.input :city %>
-  <%= f.submit %>
-<% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @citiesStared.each do |city| %>
-      <tr>
-        <td><%= city.name %></td>
-        <td><%= city.description %></td>
-        <td><%= image_tag city.image.url(:small) %></td>
-        <td><%= city.status %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<header class="header__event header__home">
+	 <div class="row">
+		<div class="logo"><a href="index.html"><%= image_tag image_path('logo.svg'), :class => "logo__img column-center" %></a></div>
+		<ul class="menu">
+			<a href="index"><li class="active">Accueil</li></a>
+			<a href="cities"><li>Villes</li></a>
+			<a href="contact"><li>Contact</li></a>
+			<a href="about"><li>About</li></a>
+		</ul>
+	</div>
+</header>
+<section id="index">
+  <div class="head">
+    <div class="title">
+      <h1>Les meilleures recettes traditionnelles<br>c'est avec <b>TradFood</b></h1>
+      <h2>Découvrez nos meilleures recettes, sélectionnées, testées et re-testées !</h2>
+      <a href="#" class="button white">Découvrir</a>
+    </div>
+  </div>
+  <div class="search">
+    <%= simple_form_for :search, html: {class: "search-bar__mob"}, url: cities_search_path do |f| %>
+      <%= f.input :city, placeholder: "Bordeaux", label: false %>
+      <%= f.submit '', :style => "display:none;" %>
     <% end %>
-  </tbody>
-</table>
-<h1>Recipes</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>City</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Recipe</th>
-      <th>Prepare</th>
-      <th>Cook</th>
-      <th>SMCD</th>
-      <th>Difficulty</th>
-      <th>Season</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= image_tag recipe.image.url(:small) %></td>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.city %></td>
-        <td><%= recipe.date %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.recipe %></td>
-        <td><%= recipe.prepare %></td>
-        <td><%= recipe.cook %></td>
-        <td><%= recipe.smcd %></td>
-        <td><%= recipe.difficulty %></td>
-        <td><%= recipe.season %></td>
-        <td><%= recipe.status %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <%= simple_form_for :search, html: {class: "search-bar"}, url: cities_search_path do |f| %>
+      <div class="field for-city stop-bar">
+        <%= f.input :city, label: "Ville" , placeholder: "Bordeaux", html: {id: "city", name: "city"}, required: false %>
+      </div>
+
+      <div class="field for-type stop-bar">
+        <%= f.input :smcd, label: "Type", collection: {'Tout' => 'all','Entrée' => 'starter','Plat' => 'mainCourse','Dessert' => 'dessert'}, html: {id: "type", name: "type"}, selected: "Tout", required: false %>
+      </div>
+
+      <div class="field for-type stop-bar">
+        <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 'easy','Moyen' => 'middle','Difficile' => 'difficul'}, html: {id: "difficulty", name: "difficulty"}, selected: "Tout", required: false %>
+      </div>
+
+      <div class="field for-type">
+        <%= f.input :season, label: "Saison", collection: {'Tout' => 'all','Ete' => 'summer','Automne' => 'automn','Printemps' => 'sping', 'Hiver' => 'winter'}, html: {id: "season", name: "season"}, selected: "Tout", required: false %>
+      </div>
+
+      <%= f.submit 'Rechercher', class: "button" %>
+
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="cases index-tops top-cities">
+    <h3>Les villes a l'affiche</h3>
+    <div class="container">
+      <% @citiesStared.each do |city| %>
+        <a href="#">
+          <div class="bloc" style="background-image:url(<%= city.image.url(:small) %>)">
+            <ul>
+              <li><%= city.name %></li>
+            </ul>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+  <div class="cases index-tops last-recipes">
+    <h3>Nos dernières recettes</h3>
+    <div class="container">
+      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/6)"><ul><li>Cannelés</li></ul></div></a>
+      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/627/200/3)"><ul><li>Cannelés</li></ul></div></a>
+      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/6)"><ul><li>Cannelés</li></ul></div></a>
+    </div>
+  </div>
+  <div class="cases index-tops top-recipes">
+    <h3>Les recettes à l'affiche</h3>
+    <div class="container">
+      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/1)"><ul><li>Cannelés</li></ul></div></a>
+      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/255/200/2)"><ul><li>Cannelés</li></ul></div></a>
+      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/6)"><ul><li>Cannelés</li></ul></div></a>
+      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/1)"><ul><li>Cannelés</li></ul></div></a>
+      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/6)"><ul><li>Cannelés</li></ul></div></a>
+    </div>
+  </div>
+  <div class="news">
+    <h3>News</h3>
+    <div class="container">
+      <div class="new">
+        <h4>Titre</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti itaque, repellendus quos dolores quam quisquam doloribus incidunt, recusandae asperiores adipisci quod voluptates consequuntur expedita dignissimos officiis cum optio? Qui, iste?</p>
+        <a href="#" class="button black">Accéder a l'article</a>
+      </div>
+      <div class="new">
+        <h4>Titre</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti itaque, repellendus quos dolores quam quisquam doloribus incidunt, recusandae asperiores adipisci quod voluptates consequuntur expedita dignissimos officiis cum optio? Qui, iste?</p>
+        <a href="#" class="button black">Accéder a l'article</a>
+      </div>
+      <div class="new">
+        <h4>Titre</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti itaque, repellendus quos dolores quam quisquam doloribus incidunt, recusandae asperiores adipisci quod voluptates consequuntur expedita dignissimos officiis cum optio? Qui, iste?</p>
+        <a href="#" class="button black">Accéder a l'article</a>
+      </div>
+    </div>
+  </div>
+</section>

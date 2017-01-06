@@ -20,7 +20,7 @@
     <%= f.label :city %>
     <%= f.select(:city) do %>
       <% City.all.each do |city| -%>
-        <%= content_tag(:option, city.name, value: city.name) %>
+        <%= content_tag(:option, city.name, value: city.id) %>
       <% end %>
     <% end %>
   </div>

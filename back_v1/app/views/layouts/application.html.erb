@@ -10,5 +10,15 @@
 
   <body>
     <%= yield %>
+    <footer>
+      <div class="left">&copy;Trad'Food 2016</div>
+      <div class="right">
+          <a href="#">Conditions générales et confidentialité</a>
+          <a href="#" class="social-icons"><%= image_tag image_path('icons/facebook.svg') %></a>
+          <a href="#" class="social-icons"><%= image_tag image_path('icons/twitter.svg') %></a>
+          <a href="#" class="social-icons"><%= image_tag image_path('icons/instagram.svg') %></a>
+          <a href="#" class="social-icons"><%= image_tag image_path('icons/pinterest.svg') %></a>
+      </div>
+    </footer>
   </body>
 </html>

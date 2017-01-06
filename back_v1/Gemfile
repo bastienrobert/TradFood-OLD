@@ -8,8 +8,6 @@ gem 'devise'
 # Simpleform
 gem "simple_form"
 # Search Gem (elasticSearch)
-# gem 'elasticsearch-rails'
-# gem 'elasticsearch-model'
 gem 'searchkick'
 # Fix console access bugs
 gem 'rb-readline'
