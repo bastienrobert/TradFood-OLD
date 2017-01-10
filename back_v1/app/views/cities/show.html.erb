@@ -2,19 +2,18 @@
 <br>
 <% searchSelect = session[:searchSelect] %>
 <!-- <% puts searchSelect %> -->
-<% puts "=======" %>
-<% puts @currentURL %>
-<% puts "=======" %>
-<%= simple_form_for :sort do |f| %>
+<!-- <% puts @currentURL %> -->
+<%= simple_form_for :search do |f| %>
   <%= f.input :smcd, label: "Type", collection: {'Tout' => 'all','Entrée' => 'starter','Plat' => 'mainCourse','Dessert' => 'dessert'}, html: {id: "type", name: "type"}, selected: searchSelect[0], required: false %>
   <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 'easy','Moyen' => 'middle','Difficile' => 'difficult'}, html: {id: "difficulty", name: "difficulty"}, selected: searchSelect[1], required: false %>
   <%= f.input :season, label: "Saison", collection: {'Tout' => 'all','Ete' => 'summer','Automne' => 'automn','Printemps' => 'sping', 'Hiver' => 'winter'}, html: {id: "season", name: "season"}, selected: searchSelect[2], required: false %>
+  <%= f.submit 'Trier' %>
 <% end %>
 <br>
 <a href="https://twitter.com/intent/tweet?text=J'adore%20cette%20recette%20!&url=<%= @currentURL %>&via=tradfood" target="_blank">Twitter !</a>
-<!-- This is for local dev (remove it onprod) -->
+<!-- FACEBOOK : This is for local dev (remove it onprod) -->
 <a href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=page&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https://tradfood.fr" target="_blank">Facebook !</a>
-<!-- This is for production -->
+<!-- FACEBOOK : This is for production -->
 <!-- <a href="https://www.facebook.com/dialog/share?app_id=217102868749055&quote=J'adore%20cette%20recette%20!&display=page&hashtag=tradfood,gastronomie,traditionnel&href=<%= @currentURL %>&redirect_uri=https://tradfood.fr" target="_blank">Facebook !</a> -->
 <br>
 <p>
@@ -37,6 +36,11 @@
   <%= image_tag @city.image.url(:small) %>
 </p>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <table>
   <thead>
@@ -45,6 +49,7 @@
       <th>Name</th>
       <th>City</th>
       <th>Description</th>
+      <th>Ingredients</th>
       <th>Recipe</th>
       <th>Prepare</th>
       <th>Cook</th>
@@ -63,6 +68,7 @@
         <td><%= recipe.name %></td>
         <td><%= recipe.city %></td>
         <td><%= recipe.description %></td>
+        <td><%= recipe.ingredients %></td>
         <td><%= recipe.recipe %></td>
         <td><%= recipe.prepare %></td>
         <td><%= recipe.cook %></td>

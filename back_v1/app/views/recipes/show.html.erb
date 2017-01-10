@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Image:</strong>
+  <%= image_tag @recipe.image.url(:small) %>
+</p>
+
+<p>
   <strong>City:</strong>
   <%= @recipe.city %>
 </p>
@@ -18,6 +23,11 @@
 <p>
   <strong>Recipe:</strong>
   <%= @recipe.recipe %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @recipe.ingredients %>
 </p>
 
 <p>

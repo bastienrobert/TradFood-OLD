@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Scaffolds
   resources :cities
   post "cities/search", to: "cities#search"
+  post "cities/sort", to: "cities#sort"
   resources :recipes
   # Root & custom
   root to: "pages#home"

@@ -61,19 +61,29 @@
   <div class="cases index-tops last-recipes">
     <h3>Nos dernières recettes</h3>
     <div class="container">
-      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/6)"><ul><li>Cannelés</li></ul></div></a>
-      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/627/200/3)"><ul><li>Cannelés</li></ul></div></a>
-      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/6)"><ul><li>Cannelés</li></ul></div></a>
+			<% @recipesLast.each do |recipe| %>
+				<%= link_to recipe do %>
+					<div class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
+						<ul>
+							<li><%= recipe.name %></li>
+						</ul>
+					</div>
+				<% end %>
+			<% end %>
     </div>
   </div>
   <div class="cases index-tops top-recipes">
     <h3>Les recettes à l'affiche</h3>
     <div class="container">
-      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/1)"><ul><li>Cannelés</li></ul></div></a>
-      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/255/200/2)"><ul><li>Cannelés</li></ul></div></a>
-      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/6)"><ul><li>Cannelés</li></ul></div></a>
-      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/1)"><ul><li>Cannelés</li></ul></div></a>
-      <a href="#"><div class="bloc" style="background-image:url(http://lorempicsum.com/up/350/200/6)"><ul><li>Cannelés</li></ul></div></a>
+			<% @recipesStared.each do |recipe| %>
+				<%= link_to recipe do %>
+					<div class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
+						<ul>
+							<li><%= recipe.name %></li>
+						</ul>
+					</div>
+				<% end %>
+			<% end %>
     </div>
   </div>
   <div class="news">

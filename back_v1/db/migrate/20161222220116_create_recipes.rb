@@ -5,9 +5,10 @@ class CreateRecipes < ActiveRecord::Migration[5.0]
       t.string :city
       t.date :date
       t.text :description
+      t.text :ingredients
       t.text :recipe
-      t.time :prepare
-      t.time :cook
+      t.integer :prepare
+      t.integer :cook
       t.string :smcd
       t.integer :difficulty
       t.integer :status

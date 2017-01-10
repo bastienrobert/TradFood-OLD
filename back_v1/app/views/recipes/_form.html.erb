@@ -11,13 +11,15 @@
     </div>
   <% end %>
 
+  <br><br>
+
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :city %>
+    <%= f.label :city %><br>
     <%= f.select(:city) do %>
       <% City.all.each do |city| -%>
         <%= content_tag(:option, city.name, value: city.id) %>
@@ -26,47 +28,53 @@
   </div>
 
   <div class="field">
-    <%= f.label :description %>
+    <%= f.label :description %><br>
     <%= f.text_area :description, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :recipe %>
+    <%= f.label :ingredients %><br>
+    <%= f.text_area :ingredients, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :recipe %><br>
     <%= f.text_area :recipe, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :prepare %>
-    <%= f.time_select :prepare, required: true %>
+    <%= f.label :prepare %><br>
+    <%= f.number_field :prepare, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :cook %>
-    <%= f.time_select :cook, required: true %>
+    <%= f.label :cook %><br>
+    <%= f.number_field :cook, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :smcd %>
+    <%= f.label :smcd %><br>
     <%= f.text_field :smcd, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :difficulty %>
+    <%= f.label :difficulty %><br>
     <%= f.number_field :difficulty, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :season %>
+    <%= f.label :season %><br>
     <%= f.text_field :season, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :status %>
+    <%= f.label :status %><br>
     <%= f.number_field :status, required: true %>
   </div>
 
   <div class="field">
-    <%= f.file_field :image, required: true %>
+    <%= f.file_field :image %>
+    <%= f.text_field :image %>
   </div>
 
   <div class="actions">
