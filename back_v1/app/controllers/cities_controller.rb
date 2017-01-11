@@ -5,10 +5,25 @@ class CitiesController < ApplicationController
   # POST /search
   def search
     city = City.search(params[:search][:city]).first
-    session[:searchSelect] = [params[:search][:smcd], params[:search][:difficulty], params[:search][:season]]
     ## Display searchSelect table on logs
     # puts session[:searchSelect]
-    redirect_to city_path(city)
+    redirect_to city_path(city, search_params)
+  end
+
+  def showByCity
+    @city = City.search(params[:name]).first
+    @search = {
+      city: @city.id,
+      smcd: params[:smcd],
+      difficulty: params[:difficulty],
+      season: params[:season]
+    }
+    @search.delete :smcd if @search[:smcd] == "all"
+    @search.delete :difficulty if @search[:difficulty] == "all"
+    @search.delete :season if @search[:season] == "all"
+    @recipes = Recipe.where(@search)
+    @currentURL = request.url
+    render "cities/show"
   end
 
   # GET /cities
@@ -20,7 +35,7 @@ class CitiesController < ApplicationController
   # GET /cities/1
   # GET /cities/1.json
   def show
-    @recipes = Recipe.where(city: @city.id)
+    @recipes = Recipe.where(city: @city)
     @currentURL = request.url
   end
 
@@ -82,6 +97,10 @@ class CitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def city_params
       params.require(:city).permit(:name, :description, :image, :status)
+    end
+
+    def search_params
+      params.require(:search).permit(:smcd, :difficulty, :season)
     end
 
 end

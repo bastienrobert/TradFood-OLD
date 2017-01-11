@@ -378,6 +378,7 @@ CITIES
 }
 .cases .container .bloc,
 #cities .fornow .bloc {
+  display: inline-block;
   width: 20em;
   height: 16em;
   background-image: url(http://lorempicsum.com/up/255/200/5);
