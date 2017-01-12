@@ -7,7 +7,11 @@ class CitiesController < ApplicationController
     city = City.search(params[:search][:city]).first
     ## Display searchSelect table on logs
     # puts session[:searchSelect]
-    redirect_to city_path(city, search_params)
+    if city.blank?
+      redirect_to cities_path
+    else
+      redirect_to city_path(city, search_params)
+    end
   end
 
   def showByCity

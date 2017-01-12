@@ -52,17 +52,14 @@ HEADER
     width: 100%;
     background-color: #e74c3c;
 }
-
 .logo {
     position: absolute;
     padding-top: 6px;
     margin-left: 30px;
 }
-
 .logo img {
     height: 48px;
 }
-
 .profil {
     display: inline-block;
     position: absolute;
@@ -70,22 +67,6 @@ HEADER
     top: 9px;
     cursor: pointer;
 }
-
-.profil__img {
-    display: inline-block;
-    margin: auto 5px;
-    border-radius: 40px;
-    border: 1px solid #fff;
-    width: auto;
-    height: 40px;
-    transition: .2s;
-}
-
-.profil__img:hover,
-.profil__img:focus {
-    opacity: .8;
-}
-
 .menu {
     list-style: none;
     right: 10px;
@@ -93,7 +74,6 @@ HEADER
     font-weight: 600;
     margin: .9em 0;
 }
-
 .menu li {
     display: list-item;
     float: left;
@@ -103,30 +83,21 @@ HEADER
     transition: 0;
     font-weight: 400;
 }
-
 .menu li:hover,
 .menu li:focus {
     border-bottom: 2px solid #fff;
 }
-
 .active {
     border-bottom: 2px solid #fff;
 }
-
 @media (max-width: 1000px) {
     .header__event {
         height: 290px;
     }
-
     .logo {
         position: relative;
         margin-bottom: .5em;
     }
-
-    .profil__img {
-        display: none;
-    }
-
     .menu {
         position: relative;
         right: 0;
@@ -135,41 +106,35 @@ HEADER
         margin: 0 auto;
         line-height: 2em;
     }
-
     .menu a {
         text-decoration: none;
     }
-
     .menu li {
         float: initial;
     }
-
     .menu li:hover {
         border: none;
         margin: 5px 25px;
         padding: 2px 11px;
     }
-
     .active:hover {
         border: 2px solid #fff !important;
         padding: 5px 9px !important;
         margin: 0 25px !important;
     }
-
     .section__event .down {
         top: 340px;
     }
-
     .section__event .down {
         top: 320px;
     }
 }
-
 @media (max-width: 450px) {
     .menu {
         width: 98%;
     }
 }
+
 /* ------------------
 FOOTER PAGE
 ------------------ */
@@ -200,6 +165,7 @@ footer .right .social-icons img {
 /* ------------------
 INDEX PAGE
 ------------------ */
+
 .header__home {
   background-color: transparent;
   position: absolute;
@@ -208,7 +174,8 @@ INDEX PAGE
   right: 0;
 }
 #index .head {
-  background: url(../img/homepage.jpg);
+  background: url(../img/homepage.png);
+  background-size: cover;
   /* background: linear-gradient(141deg, #15242e, #5f8197 75%); */
   height: 400px;
   padding-top: 100px;
@@ -262,12 +229,13 @@ INDEX PAGE
   font-size: 1.2em;
   border: 0;
   margin: 0;
-  padding: 7px 0;
+  padding: 6px 0;
   margin-bottom: 9px;
   width: 100%;
+  border-bottom: 1px solid transparent;
 }
 #index .search .search-bar .field input:focus {
-  border-bottom: 1px solid #e74c3c;
+  border-bottom-color: #e74c3c;
 }
 #index .search .search-bar .field select {
   font-size: 1.2em;
@@ -291,6 +259,9 @@ INDEX PAGE
 }
 #index .search .search-bar .field.for-type {
   width: 15%;
+}
+#index .search .search-bar .field.for-difficulty {
+  width: 20%;
 }
 #index .search .search-bar input[type="submit"] {
   border-radius: 5px;
@@ -397,7 +368,7 @@ CITIES
 #cities {
   margin-top: 3em;
 }
-#cities .container,
+.cases .container,
 #cities .fornow {
   width: 80%;
   margin: 0 auto;
@@ -405,57 +376,51 @@ CITIES
   flex-wrap: wrap;
   justify-content: space-between;
 }
-#cities .container .bloc,
-#cities .fornow .bloc,
-#index .index-tops .bloc {
+.cases .container .bloc,
+#cities .fornow .bloc {
+  display: inline-block;
   width: 20em;
   height: 16em;
   background-image: url(http://lorempicsum.com/up/255/200/5);
   background-size: cover;
-  border-radius: 13px;
+  border-radius: 7px;
   transition: filter .5s;
   margin-bottom: 5em;
 }
-#cities .container .bloc:before,
-#cities .fornow .bloc:before,
-#index .index-tops .bloc:before {
+.cases .container .bloc:before,
+#cities .fornow .bloc:before {
   content: "";
   position: absolute;
   width: 20em;
   height: 16em;
   transition: background-color .2s;
 }
-#cities .container .bloc:hover::before,
-#cities .fornow .bloc:hover::before,
-#index .index-tops .bloc:hover::before {
+.cases .container .bloc:hover::before,
+#cities .fornow .bloc:hover::before {
   background-color: rgba(255,255,255,.4);
 }
-#cities .container .bloc ul,
-#cities .fornow .bloc ul,
-#index .index-tops .bloc ul {
+.cases .container .bloc ul,
+#cities .fornow .bloc ul {
   position: absolute;
   margin-top: 11.7em;
-  padding-top: 1.5em;
+  padding-top: 1.6em;
   padding-bottom: 1.5em;
   width: 20em;
   text-align: center;
   background-color: rgba(255,255,255,.8);
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform 0.2s ease-in-out;
 }
-#cities .container .bloc:hover ul,
-#cities .fornow .bloc:hover ul,
-#index .index-tops .bloc:hover ul {
+.cases .container .bloc:hover ul,
+#cities .fornow .bloc:hover ul {
   transform: scaleY(1);
 }
-#cities .container .bloc ul li,
-#cities .fornow .bloc ul li,
-#index .index-tops .bloc ul li {
+.cases .container .bloc ul li,
+#cities .fornow .bloc ul li {
   display: inline-block;
-  padding: 0 3em;
   color: #000;
   font-size: 1.3em;
 }
@@ -471,19 +436,26 @@ CITIES
 #cities .fornow .bloc {
   margin: 0 auto;
 }
-#cities .fornow .bloc,
+#cities .fornow .bloc {
+  width: 80%;
+  height: 25em;
+}
 #cities .fornow .bloc:before {
-  width: 65em;
+  width: 64%;
   height: 25em;
 }
 #cities .fornow .bloc ul {
   margin-top: 21em;
-  width: 65em;
+  width: 64%;
 }
 
 /* ------------------
 INDEX TOPS
 ------------------ */
+#index .index-tops .container {
+  width: 100%;
+  margin: 0;
+}
 #index .index-tops h3 {
   display: block;
   width: 100%;
@@ -584,4 +556,73 @@ INDEX TOPS
   #index .last-recipes a:last-child {
     display: block;
   }
+}
+
+/* ------------------
+CITY PAGE
+------------------ */
+#city {
+  width: 80%;
+  margin: 3em auto;
+}
+#city .city__details {
+  display: flex;
+  background: #ecf0f1;
+  border-radius: 7px;
+  padding: 2em 3em;
+  margin-bottom: 3em;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+#city .city__details .left {
+  width: 50%;
+  margin-top: -2em;
+  margin-right: 2em;
+}
+#city .city__details h1 {
+  font-size: 1.9em;
+  margin-bottom: 1em;
+}
+#city .city__details p {
+  text-align: justify;
+  width: 85%;
+}
+#city .city__details .right {
+  width: 50%;
+}
+#city .city__details img {
+  width: 100%;
+  border-radius: 5px;
+}
+#city .recipes .container {
+  width: 100%;
+  margin: 0;
+}
+
+/* ------------------
+ABOUT
+------------------ */
+#about {
+  width: 80%;
+  margin: 2em auto;
+  background-color: #EEEEEE;
+  border-radius: 7px;
+  padding: 1.2em 2em;
+}
+#about h1 {
+  font-size: 2em;
+  padding: .3em 0;
+}
+#about h2 {
+  font-size: 1.5em;
+  padding: .6em 0 .3em;
+}
+#about a {
+  color: #000;
+  display: block;
+}
+#about li {
+  list-style: initial;
+  margin-left: 2em;
 }
