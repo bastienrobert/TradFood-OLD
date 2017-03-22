@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :recipes
   # Root & static pages
   root to: "pages#home"
-  get "/:page" => "pages#show"
+  get "/:about" => "pages#about", as: "about"
 end

@@ -9,6 +9,20 @@
   </head>
 
   <body>
+    <% unless current_page?(root_path) %>
+      <header class="header__global">
+    <% else %>
+      <header class="header__global header__home">
+    <% end %>
+         <div class="row">
+          <div class="logo"><a href="/"><%= image_tag image_path('logo.svg'), :class => "logo__img column-center" %></a></div>
+          <ul class="menu">
+            <a href="/"><% if current_page?(root_path) %><li class="active"><% else %><li><% end %>Accueil</li></a>
+            <a href="cities"><% if current_page?('/cities') %><li class="active"><% else %><li><% end %>Villes</li></a>
+            <a href="about"><% if current_page?('/about') %><li class="active"><% else %><li><% end %>A propos</li></a>
+          </ul>
+        </div>
+      </header>
     <%= yield %>
     <footer>
       <div class="left">&copy;Trad'Food 2016</div>

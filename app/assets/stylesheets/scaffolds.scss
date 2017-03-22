@@ -48,7 +48,7 @@ ul {
 /* ------------------
 HEADER
 ------------------ */
-.header__event {
+.header__global {
     height: 60px;
     width: 100%;
     background-color: #e74c3c;
@@ -92,7 +92,7 @@ HEADER
     border-bottom: 2px solid #fff;
 }
 @media (max-width: 1000px) {
-    .header__event {
+    .header__global {
         height: 290px;
     }
     .logo {
@@ -301,60 +301,6 @@ INDEX PAGE
     display: block;
   }
   #index .search .search-bar {
-    display: none;
-  }
-}
-
-/* Tops : after CITIES bloc */
-
-/* News */
-#index .news {
-  width: 80%;
-  margin: 0 auto 5em;
-  h3 {
-    display: block;
-    width: 100%;
-    margin-bottom: 1em;
-    font-size: 1.4em;
-    color: #1B1B1B;
-  }
-  h3:before {
-    margin-top: 1.4em;
-    content: "";
-    position: absolute;
-    background: #1B1B1B;
-    height: 2px;
-    width: 120px;
-  }
-  .container {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid #EAEAEA;
-    border-radius: 5px;
-  }
-  .new {
-    width: 33%;
-    border-right: 1px solid #EAEAEA;
-    padding: 1.3em 1em;
-    &:last-child {
-      border: 0;
-    }
-    h4 {
-      font-size: 1.4em;
-      margin-bottom: 1em;
-    }
-    p {
-      font-size: .9em;
-      text-align: justify;
-      margin-bottom: 1.2em;
-    }
-    .button {
-      display: inline-block;
-    }
-  }
-}
-@media only screen and (max-width : 850px) {
-  #index .news {
     display: none;
   }
 }
