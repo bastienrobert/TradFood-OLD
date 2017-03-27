@@ -31428,3 +31428,155 @@ Processing by CitiesController#showByCity as HTML
 Completed 200 OK in 326ms (Views: 28.3ms | Searchkick: 88.5ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/" for ::1 at 2017-03-27 11:12:39 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  Rendered pages/home.html.erb within layouts/application (104.8ms)
+Completed 200 OK in 435ms (Views: 401.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 11:12:46 +0200
+Processing by PagesController#home as HTML
+  [1m[36mRecipe Load (1.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  Rendered pages/home.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 61ms (Views: 51.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 11:14:36 +0200
+Processing by PagesController#home as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  Rendered pages/home.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/cities/search" for ::1 at 2017-03-27 11:17:19 +0200
+Processing by CitiesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z+t7zqGY9EDb2StTF6xpQbNT8Tl61MeGWnZaBV0gbg5NklRP39EEq4g0d1YMTsFJjGT+mQnUNyPtmL7puJRFxg==", "search"=>{"city"=>"Bordeau", "smcd"=>"all", "difficulty"=>"1", "season"=>"all"}, "commit"=>"Rechercher"}
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+  
+app/controllers/cities_controller.rb:7:in `search'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.8ms)
+Started POST "/cities/search" for ::1 at 2017-03-27 11:17:23 +0200
+Processing by CitiesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z+t7zqGY9EDb2StTF6xpQbNT8Tl61MeGWnZaBV0gbg5NklRP39EEq4g0d1YMTsFJjGT+mQnUNyPtmL7puJRFxg==", "search"=>{"city"=>"Bordeau", "smcd"=>"all", "difficulty"=>"1", "season"=>"all"}, "commit"=>"Rechercher"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+  
+app/controllers/cities_controller.rb:7:in `search'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.4ms)
+Started GET "/" for ::1 at 2017-03-27 11:17:29 +0200
+Processing by PagesController#home as HTML
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  Rendered pages/home.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/cities/search" for ::1 at 2017-03-27 11:17:32 +0200
+Processing by CitiesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZCvRMOuuuAiANBiXQCivXjAF4YR/DK8Qkf30R59djYNOUv6xledI49PZRJJbygdWDzLuJAwMX7UmExCreummSw==", "search"=>{"city"=>"Bordeau", "smcd"=>"all", "difficulty"=>"all", "season"=>"all"}, "commit"=>"Rechercher"}
+  [1m[33mCity Search (194.5ms)[0m  curl http://localhost:9200/cities_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"Bordeau","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"Bordeau","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"Bordeau","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"Bordeau","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"timeout":"11s","_source":false}'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = 1[0m
+Unpermitted parameter: city
+Redirected to http://localhost:3000/cities/1?difficulty=all&season=all&smcd=all
+Completed 302 Found in 332ms (Searchkick: 194.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/1?difficulty=all&season=all&smcd=all" for ::1 at 2017-03-27 11:17:32 +0200
+Processing by CitiesController#showByCity as HTML
+  Parameters: {"difficulty"=>"all", "season"=>"all", "smcd"=>"all", "name"=>"1"}
+  [1m[33mCity Search (40.8ms)[0m  curl http://localhost:9200/cities_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"timeout":"11s","_source":false}'
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1, 5, 2, 4, 3)[0m
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ?[0m  [["city", "1"]]
+  Rendered cities/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 76ms (Views: 30.2ms | Searchkick: 40.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cities/1?utf8=%E2%9C%93&smcd=all&difficulty=3&season=all&commit=Trier" for ::1 at 2017-03-27 11:17:38 +0200
+Processing by CitiesController#showByCity as HTML
+  Parameters: {"utf8"=>"✓", "smcd"=>"all", "difficulty"=>"3", "season"=>"all", "commit"=>"Trier", "name"=>"1"}
+  [1m[33mCity Search (33.2ms)[0m  curl http://localhost:9200/cities_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"timeout":"11s","_source":false}'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1, 5, 2, 4, 3)[0m
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ? AND "recipes"."difficulty" = ?[0m  [["city", "1"], ["difficulty", 3]]
+  Rendered cities/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 63ms (Views: 25.1ms | Searchkick: 33.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cities/1?utf8=%E2%9C%93&smcd=all&difficulty=2&season=all&commit=Trier" for ::1 at 2017-03-27 11:17:41 +0200
+Processing by CitiesController#showByCity as HTML
+  Parameters: {"utf8"=>"✓", "smcd"=>"all", "difficulty"=>"2", "season"=>"all", "commit"=>"Trier", "name"=>"1"}
+  [1m[33mCity Search (27.1ms)[0m  curl http://localhost:9200/cities_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"timeout":"11s","_source":false}'
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1, 5, 2, 4, 3)[0m
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ? AND "recipes"."difficulty" = ?[0m  [["city", "1"], ["difficulty", 2]]
+  Rendered cities/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 60ms (Views: 29.2ms | Searchkick: 27.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cities/1?utf8=%E2%9C%93&smcd=all&difficulty=2&season=summer&commit=Trier" for ::1 at 2017-03-27 11:17:45 +0200
+Processing by CitiesController#showByCity as HTML
+  Parameters: {"utf8"=>"✓", "smcd"=>"all", "difficulty"=>"2", "season"=>"summer", "commit"=>"Trier", "name"=>"1"}
+  [1m[33mCity Search (30.0ms)[0m  curl http://localhost:9200/cities_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"timeout":"11s","_source":false}'
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1, 5, 2, 4, 3)[0m
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ? AND "recipes"."difficulty" = ? AND "recipes"."season" = ?[0m  [["city", "1"], ["difficulty", 2], ["season", "summer"]]
+  Rendered cities/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 62ms (Views: 26.8ms | Searchkick: 30.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cities/1?utf8=%E2%9C%93&smcd=all&difficulty=all&season=summer&commit=Trier" for ::1 at 2017-03-27 11:17:47 +0200
+Processing by CitiesController#showByCity as HTML
+  Parameters: {"utf8"=>"✓", "smcd"=>"all", "difficulty"=>"all", "season"=>"summer", "commit"=>"Trier", "name"=>"1"}
+  [1m[33mCity Search (17.6ms)[0m  curl http://localhost:9200/cities_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"1","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"1","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"timeout":"11s","_source":false}'
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" IN (1, 5, 2, 4, 3)[0m
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ? AND "recipes"."season" = ?[0m  [["city", "1"], ["season", "summer"]]
+  Rendered cities/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 66ms (Views: 42.8ms | Searchkick: 17.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-03-27 11:17:53 +0200
+Processing by PagesController#home as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 5]]
+  Rendered pages/home.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.6ms)
+
+
