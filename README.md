@@ -1,4 +1,5 @@
 # Trad'Food
+[![Code Climate](https://codeclimate.com/github/bastienrobert/TradFood/badges/gpa.svg)](https://codeclimate.com/github/bastienrobert/TradFood)
 
 ## What's Trad'Food
 Trad'Food is a student project, made @ IUT Bordeaux Montaigne, and developed with <3.
