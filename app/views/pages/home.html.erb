@@ -1,10 +1,7 @@
 <section id="index">
   <div class="head">
-    <div class="title">
-      <h1>Les meilleures recettes traditionnelles<br>c'est avec <b>TradFood</b></h1>
-      <h2>Découvrez nos meilleures recettes, sélectionnées, testées et re-testées !</h2>
-      <a href="cities" class="button white">Découvrir</a>
-    </div>
+    <h1>Découvrez<br>les meilleurs plats<br>traditionnels Bordelais</h1>
+  </div>
   </div>
   <div class="search">
     <%= simple_form_for :search, html: {class: "search-bar__mob"}, url: cities_search_path do |f| %>
@@ -13,15 +10,12 @@
     <% end %>
 
     <%= simple_form_for :search, html: {class: "search-bar"}, url: cities_search_path do |f| %>
-      <div class="field for-city stop-bar">
-        <%= f.input :city, label: "Ville" , placeholder: "Bordeaux", html: {id: "city", name: "city"}, required: false %>
-      </div>
 
-      <div class="field for-type stop-bar">
+      <div class="field for-type">
         <%= f.input :smcd, label: "Type", collection: {'Tout' => 'all','Entrée' => 'starter','Plat' => 'mainCourse','Dessert' => 'dessert'}, html: {id: "type", name: "type"}, selected: "Tout", required: false %>
       </div>
 
-      <div class="field for-type stop-bar">
+      <div class="field for-type">
         <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 1,'Moyen' => 2,'Difficile' => 3}, html: {id: "difficulty", name: "difficulty"}, selected: "Tout", required: false %>
       </div>
 
@@ -34,21 +28,19 @@
     <% end %>
   </div>
   <div class="cases index-tops top-cities">
-    <h3>Les villes a l'affiche</h3>
+    <h3><em>Le concept</em></h3>
     <div class="container">
-      <% @citiesStared.each do |city| %>
-        <%= link_to city do %>
-          <span class="bloc" style="background-image:url(<%= city.image.url(:small) %>)">
-            <ul>
-              <li><%= city.name %></li>
-            </ul>
-          </span>
-        <% end %>
-      <% end %>
+      <div class="paragraph">
+        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
+        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
+        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
+        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
+        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
+      </div>
     </div>
   </div>
   <div class="cases index-tops last-recipes">
-    <h3>Nos dernières recettes</h3>
+    <h3><em>Nos dernières recettes</em></h3>
     <div class="container">
 			<% @recipesLast.each do |recipe| %>
 				<%= link_to recipe do %>
@@ -62,7 +54,7 @@
     </div>
   </div>
   <div class="cases index-tops top-recipes">
-    <h3>Les recettes à l'affiche</h3>
+    <h3><em>Les recettes à l'affiche</em></h3>
     <div class="container">
 			<% @recipesStared.each do |recipe| %>
 				<%= link_to recipe do %>

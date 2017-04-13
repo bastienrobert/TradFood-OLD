@@ -1,0 +1,341 @@
+/* ------------------
+INDEX PAGE
+------------------ */
+#index {
+  margin-top: -70px;
+  .head {
+    background: url(homepage.png);
+    background-size: cover;
+    height: 520px;
+    padding-top: 100px;
+    background-position: bottom;
+      h1 {
+        font-size: 2.9em;
+        line-height: 1.2em;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: #FFF;
+        margin-top: 6.5em;
+        margin-left: 2em;
+    }
+  }
+}
+
+/* Search bar */
+#index .search {
+  width: 65%;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  .search-bar {
+    padding: 0 5px 0 10%;
+    border: 1px solid #dce0e0;
+    border-radius: 7px;
+    box-shadow: 0 2px 40px 0 transparentize(#000, .83);
+    background-color: #FFF;
+    .field {
+      display: inline-block;
+      padding-right: .4em;
+      margin-left: 10px;
+      &.for-type {
+        width: 19%;
+      }
+      label {
+        display: block;
+        padding-top: 15px;
+        color: #212121;
+      }
+      input[type="text"] {
+        font-size: 1.2em;
+        border: 0;
+        margin: 0;
+        padding: 6px 0;
+        margin-bottom: 9px;
+        width: 100%;
+        border-bottom: 1px solid transparent;
+        &:focus {
+          border-bottom-color: #e74c3c;
+        }
+      }
+      select {
+        font-size: 1.2em;
+        padding: 7px 0;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin-bottom: 9px;
+        margin-top: 0;
+      }
+    }
+    &.for-city {
+      width: 25%;
+    }
+  }
+}
+#index .search .search-bar input[type="submit"] {
+  border-radius: 5px;
+  transform: translateY(40%);
+  float: right;
+  background-color: #FFF;
+  color: #4F4F4F;
+  border-color: #FF9C7B;
+  margin-right: 20px;
+}
+#index .search .search-bar input[type="submit"]:hover {
+  background-color: #FF9C7B;
+  color: #fff;
+}
+/* Responsive search bar */
+#index .search .search-bar__mob {
+  width: 100%;
+  display: none;
+}
+#index .search .search-bar__mob input[type="text"] {
+  width: 90%;
+  padding: 7px 15px;
+  border: 1px solid #dce0e0;
+  border-radius: 7px;
+  box-shadow: 0 1px 3px 0 #dce0e0;
+  font-size: 1.2em;
+}
+#index .search .search-bar__mob input[type="submit"] {
+  display: none;
+}
+/* Media queries for search-bar */
+@media only screen and (max-width : 1000px) {
+  #index .head {
+    padding-top: 150px;
+  }
+  #index .search .search-bar {
+    padding-left: 5px;
+    input[type="submit"] {
+      margin-right: 7px;
+    }
+  }
+}
+@media only screen and (max-width : 750px) {
+  #index .search .search-bar__mob {
+    display: block;
+  }
+  #index .search .search-bar {
+    display: none;
+  }
+}
+
+
+/* ------------------
+CITIES
+------------------ */
+#cities {
+  margin-top: 3em;
+}
+.cases .container,
+#cities .fornow {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cases .container .bloc,
+#cities .fornow .bloc {
+  display: inline-block;
+  width: 20em;
+  height: 16em;
+  background-image: url(http://lorempicsum.com/up/255/200/5);
+  background-size: cover;
+  border-radius: 7px;
+  transition: filter .5s;
+  margin-bottom: 5em;
+}
+.cases .container .bloc:before,
+#cities .fornow .bloc:before {
+  content: "";
+  position: absolute;
+  width: 20em;
+  height: 16em;
+  transition: background-color .2s;
+}
+.cases .container .bloc:hover::before,
+#cities .fornow .bloc:hover::before {
+  background-color: rgba(255,255,255,.4);
+}
+.cases .container .bloc ul,
+#cities .fornow .bloc ul {
+  position: absolute;
+  margin-top: 11.7em;
+  padding-top: 1.6em;
+  padding-bottom: 1.5em;
+  width: 20em;
+  text-align: center;
+  background-color: rgba(255,255,255,.8);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.2s ease-in-out;
+}
+.cases .container .bloc:hover ul,
+#cities .fornow .bloc:hover ul {
+  transform: scaleY(1);
+}
+.cases .container .bloc ul li,
+#cities .fornow .bloc ul li {
+  display: inline-block;
+  color: #000;
+  font-size: 1.3em;
+}
+#cities .fornow {
+  display: block;
+}
+#cities .fornow h4 {
+  display: block;
+  text-align: center;
+  margin: 4em 0 2em;
+  font-size: 1.4em;
+}
+#cities .fornow .bloc {
+  margin: 0 auto;
+}
+#cities .fornow .bloc {
+  width: 80%;
+  height: 25em;
+}
+#cities .fornow .bloc:before {
+  width: 64%;
+  height: 25em;
+}
+#cities .fornow .bloc ul {
+  margin-top: 21em;
+  width: 64%;
+}
+
+/* ------------------
+INDEX TOPS
+------------------ */
+#index .index-tops .container {
+  width: 100%;
+  margin: 0;
+  .paragraph {
+    width: 78%;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    p {
+      padding-bottom: 1.4em;
+      font-size: .95em;
+    }
+  }
+}
+#index .index-tops h3 {
+  display: block;
+  width: 100%;
+  margin-bottom: 2.4em;
+  font-size: 1.4em;
+  color: #1B1B1B;
+  text-align: center;
+  position: relative;
+  em {
+    background: #FFF;
+    padding: 0 25px;
+  }
+}
+#index .index-tops h3:after {
+  margin-top: .5em;
+  content: "";
+  position: absolute;
+  background: #FF9C7B;
+  height: 3px;
+  z-index: -1;
+  width: 80vw;
+  transform: translateY(-50%);
+  left: 0;
+}
+#index .index-tops {
+  width: 80%;
+  margin: -1em auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#index .index-tops .bloc {
+  width: 13em;
+}
+#index .index-tops .bloc:before {
+  width: 13em;
+}
+#index .index-tops .bloc ul {
+  width: 13em;
+}
+@media only screen and (max-width : 1400px) {
+  #index .top-cities a:last-child,
+  #index .top-recipes a:last-child {
+    display: none;
+  }
+}
+@media only screen and (max-width : 1250px) {
+  #index .top-cities a:nth-child(4),
+  #index .top-recipes a:nth-child(4) {
+    display: none;
+  }
+}
+@media only screen and (max-width : 775px) {
+  #index .top-cities a:nth-child(4),
+  #index .top-recipes a:nth-child(4) {
+    display: block;
+  }
+}
+@media only screen and (max-width : 550px) {
+  #index .index-tops {
+    flex-direction: column;
+    align-items: center
+  }
+  #index .index-tops .bloc {
+    width: 75vw;
+  }
+  #index .index-tops .bloc:before {
+    width: 75vw;
+  }
+  #index .index-tops .bloc ul {
+    width: 75vw;
+  }
+}
+/* Top cities */
+#index .top-cities {
+  margin: 4em auto -1em;
+}
+/* Last recipes */
+#index .last-recipes .bloc {
+  width: 20em;
+}
+#index .last-recipes .bloc:before {
+  width: 20em;
+}
+#index .last-recipes .bloc ul {
+  width: 20em;
+}
+@media only screen and (max-width : 1210px) {
+  #index .last-recipes a:last-child {
+    display: none;
+  }
+}
+@media only screen and (max-width : 850px) {
+  #index .last-recipes {
+    flex-direction: column;
+    align-items: center
+  }
+  #index .last-recipes .bloc {
+    width: 75vw;
+  }
+  #index .last-recipes .bloc:before {
+    width: 75vw;
+  }
+  #index .last-recipes .bloc ul {
+    width: 75vw;
+  }
+  #index .last-recipes a:last-child {
+    display: block;
+  }
+}
