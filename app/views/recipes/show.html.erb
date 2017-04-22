@@ -1,6 +1,22 @@
-<p id="notice"><%= notice %></p>
+<section id="recipe">
+  <h1><%= @recipe.name %></h1>
+  <a href="#" class="arrow left"></a>
+  <div class="container">
+    <%= image_tag image_path('test.png'), :class => "logo__img column-center", :alt => @recipe.name %>
+    <div class="right">
+      <h2>Ingrédients</h2>
+      <ul>
+        <li><%= @recipe.ingredients %></li>
+      </ul>
+      <hr>
+      <h2>Recette</h2>
+      <p><%= @recipe.recipe %></p>
+    </div>
+  </div>
+  <a href="#" class="arrow right"></a>
+</section>
 
-<p>
+<!-- <p>
   <strong>Name:</strong>
   <%= @recipe.name %>
 </p>
@@ -27,7 +43,6 @@
 
 <p>
   <strong>Ingredients:</strong>
-  <%= @recipe.ingredients %>
 </p>
 
 <p>
@@ -56,4 +71,4 @@
 </p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%= link_to 'Back', recipes_path %> -->
