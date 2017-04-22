@@ -66,8 +66,8 @@ INDEX PAGE
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        margin: 0;
         margin-bottom: 9px;
-        margin-top: 0;
       }
     }
     &.for-city {
@@ -125,114 +125,31 @@ INDEX PAGE
   }
 }
 
-
 /* ------------------
-CITIES
+INDEX CASES
 ------------------ */
-#cities {
-  margin-top: 3em;
-}
-.cases .container,
-#cities .fornow {
+.concept,
+.cases {
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 4em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.cases .container .bloc,
-#cities .fornow .bloc {
-  display: inline-block;
-  width: 20em;
-  height: 16em;
-  background-image: url(http://lorempicsum.com/up/255/200/5);
-  background-size: cover;
-  border-radius: 7px;
-  transition: filter .5s;
-  margin-bottom: 5em;
-}
-.cases .container .bloc:before,
-#cities .fornow .bloc:before {
-  content: "";
-  position: absolute;
-  width: 20em;
-  height: 16em;
-  transition: background-color .2s;
-}
-.cases .container .bloc:hover::before,
-#cities .fornow .bloc:hover::before {
-  background-color: rgba(255,255,255,.4);
-}
-.cases .container .bloc ul,
-#cities .fornow .bloc ul {
-  position: absolute;
-  margin-top: 11.7em;
-  padding-top: 1.6em;
-  padding-bottom: 1.5em;
-  width: 20em;
-  text-align: center;
-  background-color: rgba(255,255,255,.8);
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.2s ease-in-out;
-}
-.cases .container .bloc:hover ul,
-#cities .fornow .bloc:hover ul {
-  transform: scaleY(1);
-}
-.cases .container .bloc ul li,
-#cities .fornow .bloc ul li {
-  display: inline-block;
-  color: #000;
-  font-size: 1.3em;
-}
-#cities .fornow {
-  display: block;
-}
-#cities .fornow h4 {
-  display: block;
-  text-align: center;
-  margin: 4em 0 2em;
-  font-size: 1.4em;
-}
-#cities .fornow .bloc {
-  margin: 0 auto;
-}
-#cities .fornow .bloc {
-  width: 80%;
-  height: 25em;
-}
-#cities .fornow .bloc:before {
-  width: 64%;
-  height: 25em;
-}
-#cities .fornow .bloc ul {
-  margin-top: 21em;
-  width: 64%;
-}
-
-/* ------------------
-INDEX TOPS
------------------- */
-#index .index-tops .container {
-  width: 100%;
-  margin: 0;
-  .paragraph {
-    width: 78%;
+.concept {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  p {
+    width: 85%;
     margin: 0 auto;
-    margin-bottom: 3em;
-    p {
-      padding-bottom: 1.4em;
-      font-size: .95em;
-    }
+    margin-bottom: 1.4em;
   }
 }
-#index .index-tops h3 {
+.concept h3,
+.cases h3 {
   display: block;
   width: 100%;
-  margin-bottom: 2.4em;
+  margin: 0 auto 1.5em;
   font-size: 1.4em;
   color: #1B1B1B;
   text-align: center;
@@ -240,9 +157,11 @@ INDEX TOPS
   em {
     background: #FFF;
     padding: 0 25px;
+    font-weight: 600;
   }
 }
-#index .index-tops h3:after {
+.concept h3:after,
+.cases h3:after {
   margin-top: .5em;
   content: "";
   position: absolute;
@@ -253,89 +172,136 @@ INDEX TOPS
   transform: translateY(-50%);
   left: 0;
 }
-#index .index-tops {
-  width: 80%;
-  margin: -1em auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-#index .index-tops .bloc {
-  width: 13em;
-}
-#index .index-tops .bloc:before {
-  width: 13em;
-}
-#index .index-tops .bloc ul {
-  width: 13em;
-}
-@media only screen and (max-width : 1400px) {
-  #index .top-cities a:last-child,
-  #index .top-recipes a:last-child {
-    display: none;
+
+/* INDEX CASES : TOP RECIPES */
+.cases.top-recipes {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    a {
+      width: calc(95%/3);
+      margin: 0 calc(5%/6);
+      text-align: center;
+      display: block;
+      height: 600px;
+      background-color: #000;
+      box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, .5);
+      transition: box-shadow .3s;
+      .bloc {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        .on-hover {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,.3);
+          opacity: 0;
+          transition: opacity .3s;
+          .infos {
+            padding-top: 300px;
+            ul {
+              transform: translateY(25%);
+              text-align: center;
+              li {
+                transform: translateY(-50%);
+                color: #FFF;
+              }
+              strong {
+                font-size: 1.4em;
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, .5);
+        .on-hover {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
-@media only screen and (max-width : 1250px) {
-  #index .top-cities a:nth-child(4),
-  #index .top-recipes a:nth-child(4) {
-    display: none;
+@media only screen and (max-width : 750px) {
+  .cases.top-recipes {
+    .container {
+      flex-wrap: wrap;
+      a {
+        width: 100%;
+        margin: 1em 0;
+        height: 100px;
+        min-height: 100px;
+      }
+      .on-hover {
+        background-color: transparent!important;
+      }
+      .infos {
+        padding-top: 0!important;
+        ul {
+          margin-top: 50px;
+          transform: translateY(-50%)!important;
+        }
+      }
+    }
   }
 }
-@media only screen and (max-width : 775px) {
-  #index .top-cities a:nth-child(4),
-  #index .top-recipes a:nth-child(4) {
-    display: block;
+
+/* INDEX CASES : RANDOM RECIPES */
+.cases.random-recipes {
+  width: 100%;
+  display: block;
+  h3 {
+    width: 80%;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      width: calc(100%/6);
+      height: calc(100vw/6);
+    }
+    .bloc {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-image: url(homepage.png)!important;
+      .on-hover {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.3);
+        opacity: 0;
+        transition: opacity .2s;
+        span {
+          display: block;
+          padding-top: 50%;
+          color: #FFF;
+          font-size: 1.2em;
+          em {
+            display: block;
+            transform: translateY(-50%);
+          }
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
-@media only screen and (max-width : 550px) {
-  #index .index-tops {
-    flex-direction: column;
-    align-items: center
-  }
-  #index .index-tops .bloc {
-    width: 75vw;
-  }
-  #index .index-tops .bloc:before {
-    width: 75vw;
-  }
-  #index .index-tops .bloc ul {
-    width: 75vw;
-  }
-}
-/* Top cities */
-#index .top-cities {
-  margin: 4em auto -1em;
-}
-/* Last recipes */
-#index .last-recipes .bloc {
-  width: 20em;
-}
-#index .last-recipes .bloc:before {
-  width: 20em;
-}
-#index .last-recipes .bloc ul {
-  width: 20em;
-}
-@media only screen and (max-width : 1210px) {
-  #index .last-recipes a:last-child {
-    display: none;
-  }
-}
-@media only screen and (max-width : 850px) {
-  #index .last-recipes {
-    flex-direction: column;
-    align-items: center
-  }
-  #index .last-recipes .bloc {
-    width: 75vw;
-  }
-  #index .last-recipes .bloc:before {
-    width: 75vw;
-  }
-  #index .last-recipes .bloc ul {
-    width: 75vw;
-  }
-  #index .last-recipes a:last-child {
-    display: block;
+@media only screen and (max-width : 750px) {
+  .cases.random-recipes {
+    .container {
+      a:nth-child(n + 7) {
+        display: none;
+      }
+      a {
+        width: calc(100%/3);
+        height: calc(100vw/3);
+        font-size: 1.2em;
+      }
+    }
   }
 }

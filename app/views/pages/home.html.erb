@@ -27,7 +27,7 @@
 
     <% end %>
   </div>
-  <div class="cases index-tops top-cities">
+  <div class="concept">
     <h3><em>Le concept</em></h3>
     <div class="container">
       <div class="paragraph">
@@ -37,32 +37,47 @@
       </div>
     </div>
   </div>
-  <div class="cases index-tops last-recipes">
+  <div class="cases top-recipes">
     <h3><em>Les tendances</em></h3>
     <div class="container">
 			<% Recipe.where(status:2).limit(3).each do |recipe| %>
 				<%= link_to recipe do %>
-					<span class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
-						<ul>
-							<li><%= recipe.name %></li>
-						</ul>
-					</span>
+					<div class="bloc" style="background-image:url(<%= recipe.image.url(:big) %>)">
+						<div class="on-hover">
+              <div class="infos">
+                <ul>
+    							<strong><li><%= recipe.name %></li></strong>
+    						</ul>
+              </div>
+						</div>
+					</div>
 				<% end %>
 			<% end %>
     </div>
   </div>
-  <div class="cases index-tops top-recipes">
+  <div class="cases random-recipes">
     <h3><em>Les recettes à l'affiche</em></h3>
     <div class="container">
 			<% Recipe.limit(12).each do |recipe| %>
 				<%= link_to recipe do %>
-					<span class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
-						<ul>
-							<li><%= recipe.name %></li>
-						</ul>
-					</span>
+					<div class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
+						<div class="on-hover">
+              <span><em><%= recipe.name %></em></span>
+						</div>
+					</div>
 				<% end %>
 			<% end %>
+      <!-- REMOVE ME -->
+      <% Recipe.limit(12).each do |recipe| %>
+        <%= link_to recipe do %>
+          <div class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
+            <div class="on-hover">
+              <span><em><%= recipe.name %></em></span>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <!-- END OF REMOVE ME -->
     </div>
   </div>
 </section>
