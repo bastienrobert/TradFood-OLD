@@ -31,18 +31,16 @@
     <h3><em>Le concept</em></h3>
     <div class="container">
       <div class="paragraph">
-        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
-        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
-        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
-        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
-        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. It’s close enough to Thanksgiving for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
+        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time.</p>
+        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey.</p>
+        <p>While your neighbors are putting up their Halloween decorations and scouring supermarkets for bargain candy, it’s the perfect time for you to deep fry a turkey. If you’ve been thinking about deep frying a turkey for Thanksgiving but want to try it first, then October is the perfect time. for you to gain some valuable experience but still far enough away that your family won’t get tired of turkey sandwiches.</p>
       </div>
     </div>
   </div>
   <div class="cases index-tops last-recipes">
-    <h3><em>Nos dernières recettes</em></h3>
+    <h3><em>Les tendances</em></h3>
     <div class="container">
-			<% @recipesLast.each do |recipe| %>
+			<% Recipe.where(status:2).limit(3).each do |recipe| %>
 				<%= link_to recipe do %>
 					<span class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
 						<ul>
@@ -56,7 +54,7 @@
   <div class="cases index-tops top-recipes">
     <h3><em>Les recettes à l'affiche</em></h3>
     <div class="container">
-			<% @recipesStared.each do |recipe| %>
+			<% Recipe.limit(12).each do |recipe| %>
 				<%= link_to recipe do %>
 					<span class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
 						<ul>
