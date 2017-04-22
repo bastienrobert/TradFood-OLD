@@ -4,20 +4,31 @@ class CitiesController < ApplicationController
 
   # POST /search
   def search
-    city = City.search(params[:search][:city]).first
+    ## Uncomment to set city search engine
+    # city = City.search(params[:search][:city]).first
+
     ## Display searchSelect table on logs
     # puts session[:searchSelect]
-    if city.blank?
-      redirect_to cities_path
-    else
-      redirect_to city_path(city, search_params)
-    end
+
+    ## Uncomment to set city search engine
+    # if city.blank?
+    #   redirect_to cities_path
+    # else
+    #   redirect_to city_path(city, search_params)
+    # end
+    ## Delete if you wanna set the search engine
+    redirect_to city_path(1)
+
   end
 
   def showByCity
-    @city = City.search(params[:name]).first
+    ## Uncomment to set city search engine
+    # @city = City.search(params[:name]).first
+    ## Delete to set city search engine
+    @city = City.find(params[:name])
+
     @search = {
-      city: @city.id,
+      # city: @city.id,
       smcd: params[:smcd],
       difficulty: params[:difficulty],
       season: params[:season]
