@@ -1,16 +1,14 @@
 header {
   height: 70px;
-  width: 100%;
-  background-color: transparentize(#191F31, .25);
   position: relative;
-  box-shadow: 14px 0px 20px 13px transparentize(#000, .5);
   .row {
     display: flex;
     height: 70px;
     justify-content: space-between;
     align-items: center;
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
+    border-bottom: 1.5px solid #131D34;
   }
   .logo {
       margin-left: 30px;
@@ -25,9 +23,9 @@ header {
   .menu {
       list-style: none;
       font-weight: 600;
+      margin-right: 60px;
       li {
-        display: list-item;
-        float: left;
+        display: inline-block;
         margin: 5px 30px;
         color: #FF9C7B;
         padding: 2px 2px;
@@ -39,9 +37,9 @@ header {
         // }
       }
   }
-  // .active {
-  //     border-bottom: 2px solid #fff;
-  // }
+  .active {
+      color: #000!important;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -84,4 +82,9 @@ header {
     .menu {
         width: 98%;
     }
+}
+
+header#home {
+  background-color: transparentize(#191F31, .25);
+  box-shadow: 14px 0px 20px 13px transparentize(#000, .5);
 }

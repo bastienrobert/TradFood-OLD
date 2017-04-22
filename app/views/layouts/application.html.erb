@@ -9,13 +9,17 @@
   </head>
 
   <body>
-    <header>
+    <% if current_page?(root_path) %>
+      <header id="home">
+    <% else %>
+      <header>
+    <% end %>
        <div class="row">
         <div class="logo"><a href="/"><%= image_tag image_path('logo-orange.svg'), :class => "logo__img column-center" %></a></div>
         <ul class="menu">
-          <a href="/"><% if current_page?(root_path) %><li class="active"><% else %><li><% end %>Accueil</li></a>
-          <a href="cities"><% if current_page?('/cities') %><li class="active"><% else %><li><% end %>Villes</li></a>
-          <a href="about"><% if current_page?('/about') %><li class="active"><% else %><li><% end %>A propos</li></a>
+          <%= link_to root_path do %><% if current_page?(root_path) %><li class="active"><% else %><li><% end %>Accueil</li><% end %>
+          <%= link_to cities_path do %><% unless current_page?('/' || '/about') %><li class="active"><% else %><li><% end %>Villes</li><% end %>
+          <a href="/about"><% if current_page?('/about') %><li class="active"><% else %><li><% end %>A propos</li></a>
         </ul>
       </div>
     </header>
