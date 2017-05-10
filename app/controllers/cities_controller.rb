@@ -4,40 +4,11 @@ class CitiesController < ApplicationController
 
   # POST /search
   def search
-    ## Uncomment to set city search engine
-    # city = City.search(params[:search][:city]).first
-
-    ## Display searchSelect table on logs
-    # puts session[:searchSelect]
-
-    ## Uncomment to set city search engine
-    # if city.blank?
-    #   redirect_to cities_path
-    # else
-    #   redirect_to city_path(city, search_params)
-    # end
-    ## Delete if you wanna set the search engine
-    redirect_to city_path(1)
-
+    redirect_to city_path(1, search_params)
   end
 
   def showByCity
-    ## Uncomment to set city search engine
-    # @city = City.search(params[:name]).first
-    ## Delete to set city search engine
     @city = City.find(params[:name])
-
-    @search = {
-      # city: @city.id,
-      smcd: params[:smcd],
-      difficulty: params[:difficulty],
-      season: params[:season]
-    }
-    @search.delete :smcd if @search[:smcd] == "all"
-    @search.delete :difficulty if @search[:difficulty] == "all"
-    @search.delete :season if @search[:season] == "all"
-    @recipes = Recipe.where(@search)
-    @currentURL = request.url
     render "cities/show"
   end
 
@@ -50,7 +21,17 @@ class CitiesController < ApplicationController
   # GET /cities/1
   # GET /cities/1.json
   def show
-    @recipes = Recipe.where(city: @city)
+    @search = {
+      city: @city.id,
+      smcd: params[:smcd],
+      difficulty: params[:difficulty],
+      season: params[:season]
+    }
+    @search.delete :smcd if @search[:smcd] == "all"
+    @search.delete :difficulty if @search[:difficulty] == "all"
+    @search.delete :season if @search[:season] == "all"
+    @recipes = Recipe.where(@search)
+
     @currentURL = request.url
   end
 

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <br>
 <!-- <% puts @currentURL %> -->
+
+<!-- HERE : REMOVE QUOTES AROUND @search[:parameter] -->
 <%= simple_form_for :search, method: :get do |f| %>
   <%= f.input :smcd, label: "Type", collection: {'Tout' => 'all','Entrée' => 'starter','Plat' => 'mainCourse','Dessert' => 'dessert'}, html: {id: "type"}, input_html: {name: "smcd"}, selected: @search[:smcd], required: false %>
   <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 1,'Moyen' => 2,'Difficile' => 3}, html: {id: "difficulty"}, input_html: {name: "difficulty"}, selected: @search[:difficulty], required: false %>
