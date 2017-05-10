@@ -54,26 +54,15 @@
   <div class="cases random-recipes">
     <h3><em>Les recettes à l'affiche</em></h3>
     <div class="container">
-			<% Recipe.limit(12).each do |recipe| %>
+			<% Recipe.limit(12).reverse.each do |recipe| %>
 				<%= link_to recipe do %>
-					<div class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
+					<div class="bloc" style="background-image:url(<%= recipe.image.url(:medium) %>)">
 						<div class="on-hover">
               <span><em><%= recipe.name %></em></span>
 						</div>
 					</div>
 				<% end %>
 			<% end %>
-      <!-- REMOVE ME -->
-      <% Recipe.limit(12).each do |recipe| %>
-        <%= link_to recipe do %>
-          <div class="bloc" style="background-image:url(<%= recipe.image.url(:small) %>)">
-            <div class="on-hover">
-              <span><em><%= recipe.name %></em></span>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-      <!-- END OF REMOVE ME -->
     </div>
   </div>
 </section>
