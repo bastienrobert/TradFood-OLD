@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   # Scaffolds
   resources :cities
   post "cities/search", to: "cities#search"
-  post "cities/sort", to: "cities#sort"
-  get "/cities/:name" => "cities#showByCity", as: :city_show_by_city_path
 
   resources :recipes
   # Root & static pages

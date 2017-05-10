@@ -4,12 +4,7 @@ class CitiesController < ApplicationController
 
   # POST /search
   def search
-    redirect_to city_path(1, search_params)
-  end
-
-  def showByCity
-    @city = City.find(params[:name])
-    render "cities/show"
+    redirect_to  city_path(1, search_params)
   end
 
   # GET /cities
@@ -21,16 +16,24 @@ class CitiesController < ApplicationController
   # GET /cities/1
   # GET /cities/1.json
   def show
+    @city = City.find(params[:id])
+
     @search = {
       city: @city.id,
       smcd: params[:smcd],
       difficulty: params[:difficulty],
       season: params[:season]
     }
+    # No comment...
     @search.delete :smcd if @search[:smcd] == "all"
+    @search.delete :smcd unless @search[:smcd]
     @search.delete :difficulty if @search[:difficulty] == "all"
+    @search.delete :difficulty unless @search[:difficulty]
     @search.delete :season if @search[:season] == "all"
-    @recipes = Recipe.where(@search)
+    @search.delete :season unless @search[:season]
+
+    @recipes = Recipe.where(@search) if @search
+    @recipes = Recipe.where(city: @city) unless @search
 
     @currentURL = request.url
   end
