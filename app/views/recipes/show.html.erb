@@ -2,7 +2,7 @@
   <h1><%= @recipe.name %></h1>
   <a href="#" class="arrow left"></a>
   <div class="container">
-    <%= image_tag image_path('test.png'), :class => "logo__img column-center", :alt => @recipe.name %>
+    <%= image_tag @recipe.image.url(:medium), :class => "logo__img column-center", :alt => @recipe.name %>
     <div class="right">
       <h2>Ingrédients</h2>
       <ul>

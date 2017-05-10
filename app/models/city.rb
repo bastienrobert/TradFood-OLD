@@ -1,7 +1,4 @@
 class City < ApplicationRecord
-
-  searchkick
-
   ## Paperclip
   # Image sizes
   has_attached_file :image, styles: {

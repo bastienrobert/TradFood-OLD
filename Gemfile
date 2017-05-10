@@ -8,8 +8,6 @@ gem 'rails_12factor', group: :production #rails library tuned to run smoothly on
 gem 'devise'
 # Simpleform
 gem "simple_form"
-# Search Gem (elasticSearch)
-gem 'searchkick'
 # Fix console access bugs
 gem 'rb-readline'
 # Use sqlite3 as the database for Active Record

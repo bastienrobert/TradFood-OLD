@@ -41411,3 +41411,596 @@ app/controllers/cities_controller.rb:69:in `update'
   Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.6ms)
+Started GET "/cities/1/edit" for ::1 at 2017-05-10 11:10:08 +0200
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/edit.html.erb within layouts/application
+  Rendered cities/_form.html.erb (3.0ms)
+  Rendered cities/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/cities/1" for ::1 at 2017-05-10 11:10:16 +0200
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dh4SgorEWVRwcoZDy6AmTdxT8qdjyTNsGOyjh2MPz65Yvm6DFrJ4T5E2xqB390AHmK4EX8474fiLOvKmzS0uZQ==", "city"=>{"name"=>"Bordeaux", "description"=>"Bordeaux est une commune du Sud-Ouest de la France, préfecture du département de la Gironde et chef-lieu de la région Nouvelle-Aquitaine. Capitale de l'ancienne Guyenne, Bordeaux, située en bordure des Landes de Gascogne, fait partie de la Gascogne.", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fcf82c2dd10 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5194-cmkkqs.jpg>, @original_filename="1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"city[image]\"; filename=\"1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update City", "id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-q38yi2.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]' -auto-orient -resize "1920x1080>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/54b32e0bdcf6f20672c9672bff7596e120170510-5194-jl340u'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]' -auto-orient -resize "1280x720>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/54b32e0bdcf6f20672c9672bff7596e120170510-5194-17ze8aj'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-7s1yw2.jpg[0]' -auto-orient -resize "320x260>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/54b32e0bdcf6f20672c9672bff7596e120170510-5194-31vuig'
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-1y4gjk0.jpg'
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "cities" SET "image_file_name" = ?, "image_file_size" = ?, "image_updated_at" = ?, "updated_at" = ? WHERE "cities"."id" = ?[0m  [["image_file_name", "1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg"], ["image_file_size", 455740], ["image_updated_at", 2017-05-10 09:10:16 UTC], ["updated_at", 2017-05-10 09:10:17 UTC], ["id", 1]]
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mCity Store (10.5ms)[0m  {"id":1,"exception":["Faraday::ConnectionFailed","Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for \"localhost\" port 9200)"],"exception_object":"Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for \"localhost\" port 9200)"}
+Completed 500 Internal Server Error in 1853ms (Searchkick: 10.5ms | ActiveRecord: 2.8ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+  
+app/controllers/cities_controller.rb:70:in `block in update'
+app/controllers/cities_controller.rb:69:in `update'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.0ms)
+Started PATCH "/cities/1" for ::1 at 2017-05-10 11:10:39 +0200
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dh4SgorEWVRwcoZDy6AmTdxT8qdjyTNsGOyjh2MPz65Yvm6DFrJ4T5E2xqB390AHmK4EX8474fiLOvKmzS0uZQ==", "city"=>{"name"=>"Bordeaux", "description"=>"Bordeaux est une commune du Sud-Ouest de la France, préfecture du département de la Gironde et chef-lieu de la région Nouvelle-Aquitaine. Capitale de l'ancienne Guyenne, Bordeaux, située en bordure des Landes de Gascogne, fait partie de la Gascogne.", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fcf888c1e78 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5194-1cac2ox.jpg>, @original_filename="1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"city[image]\"; filename=\"1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update City", "id"=>"1"}
+  [1m[36mCity Load (2.9ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-ax3fki.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]' -auto-orient -resize "1920x1080>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/5dac9b5742d2539beba2f1cf126471ec20170510-5194-1vpunvf'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]' -auto-orient -resize "1280x720>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/5dac9b5742d2539beba2f1cf126471ec20170510-5194-1ki8v8b'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-5uuz9d.jpg[0]' -auto-orient -resize "320x260>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/5dac9b5742d2539beba2f1cf126471ec20170510-5194-1ln3x20'
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-18iuc09.jpg'
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "cities" SET "image_updated_at" = ?, "updated_at" = ?, "image_file_name" = ? WHERE "cities"."id" = ?[0m  [["image_updated_at", 2017-05-10 09:10:40 UTC], ["updated_at", 2017-05-10 09:10:40 UTC], ["image_file_name", "1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg"], ["id", 1]]
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mCity Store (5.9ms)[0m  {"id":1,"exception":["Faraday::ConnectionFailed","Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for \"localhost\" port 9200)"],"exception_object":"Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for \"localhost\" port 9200)"}
+Completed 500 Internal Server Error in 2300ms (Searchkick: 5.9ms | ActiveRecord: 5.7ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+  
+app/controllers/cities_controller.rb:70:in `block in update'
+app/controllers/cities_controller.rb:69:in `update'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.3ms)
+Started PATCH "/cities/1" for ::1 at 2017-05-10 11:10:46 +0200
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dh4SgorEWVRwcoZDy6AmTdxT8qdjyTNsGOyjh2MPz65Yvm6DFrJ4T5E2xqB390AHmK4EX8474fiLOvKmzS0uZQ==", "city"=>{"name"=>"Bordeaux", "description"=>"Bordeaux est une commune du Sud-Ouest de la France, préfecture du département de la Gironde et chef-lieu de la région Nouvelle-Aquitaine. Capitale de l'ancienne Guyenne, Bordeaux, située en bordure des Landes de Gascogne, fait partie de la Gascogne.", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fcf8889c038 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5194-1ri1sho.jpg>, @original_filename="1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"city[image]\"; filename=\"1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update City", "id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-nsu2z2.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]' -auto-orient -resize "1920x1080>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/752c573db9aa85e681188590cba9887620170510-5194-1ek3qvc'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]' -auto-orient -resize "1280x720>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/752c573db9aa85e681188590cba9887620170510-5194-14pznc3'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-bi2po6.jpg[0]' -auto-orient -resize "320x260>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/752c573db9aa85e681188590cba9887620170510-5194-e0da8c'
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/df953f25499093e3915d0d487bfc41c520170510-5194-stoab4.jpg'
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "cities" SET "image_updated_at" = ?, "updated_at" = ?, "image_file_name" = ? WHERE "cities"."id" = ?[0m  [["image_updated_at", 2017-05-10 09:10:46 UTC], ["updated_at", 2017-05-10 09:10:47 UTC], ["image_file_name", "1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg"], ["id", 1]]
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mCity Store (198.4ms)[0m  {"id":1}
+Redirected to http://localhost:3000/cities/1
+Completed 302 Found in 2150ms (Searchkick: 198.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/cities/1" for ::1 at 2017-05-10 11:10:48 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ?[0m  [["city", "1"]]
+  Rendered cities/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 56ms (Views: 51.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-05-10 11:10:54 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 3]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT ?[0m  [["LIMIT", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT ?[0m  [["LIMIT", 12]]
+  Rendered pages/home.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cities" for ::1 at 2017-05-10 11:10:58 +0200
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cities/1" for ::1 at 2017-05-10 11:10:59 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ?[0m  [["city", "1"]]
+  Rendered cities/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cities/1/edit" for ::1 at 2017-05-10 11:11:10 +0200
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/edit.html.erb within layouts/application
+  Rendered cities/_form.html.erb (9.2ms)
+  Rendered cities/edit.html.erb within layouts/application (12.4ms)
+Started GET "/cities/1/edit" for ::1 at 2017-05-10 11:11:10 +0200
+Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/edit.html.erb within layouts/application
+Completed 200 OK in 63ms (Views: 56.4ms | ActiveRecord: 0.5ms)
+
+
+  Rendered cities/_form.html.erb (3.7ms)
+  Rendered cities/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 65ms (Views: 56.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/cities/1" for ::1 at 2017-05-10 11:11:19 +0200
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Zz4FzU4noFCQm0ZW/tgyryaVBPAZqxvTBWhv40uGEP7PIQWqU6/mqMGLfrnrAaA+Gei622Ufvvfw/CeIwz5iA==", "city"=>{"name"=>"Bordeaux", "description"=>"Bordeaux est une commune du Sud-Ouest de la France, préfecture du département de la Gironde et chef-lieu de la région Nouvelle-Aquitaine. Capitale de l'ancienne Guyenne, Bordeaux, située en bordure des Landes de Gascogne, fait partie de la Gascogne.", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fcf82215b70 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5194-qvton4.jpg>, @original_filename="412.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"city[image]\"; filename=\"412.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update City", "id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-lu8p38.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]' -auto-orient -resize "1920x1080>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/cf5fce31c9c48bd72c784adc565d82ea20170510-5194-vuzuh'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]' -auto-orient -resize "1280x720>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/cf5fce31c9c48bd72c784adc565d82ea20170510-5194-lwn5s'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-him0tw.jpg[0]' -auto-orient -resize "320x260>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/cf5fce31c9c48bd72c784adc565d82ea20170510-5194-9kc8rv'
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5194-e57xcg.jpg'
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "cities" SET "image_file_name" = ?, "image_file_size" = ?, "image_updated_at" = ?, "updated_at" = ? WHERE "cities"."id" = ?[0m  [["image_file_name", "412.jpg"], ["image_file_size", 321419], ["image_updated_at", 2017-05-10 09:11:20 UTC], ["updated_at", 2017-05-10 09:11:20 UTC], ["id", 1]]
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/1200px-1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/412.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/412.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/412.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/412.jpg
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mCity Store (3.4ms)[0m  {"id":1,"exception":["Faraday::ConnectionFailed","Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for \"localhost\" port 9200)"],"exception_object":"Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for \"localhost\" port 9200)"}
+Completed 500 Internal Server Error in 3245ms (Searchkick: 3.4ms | ActiveRecord: 1.9ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+  
+app/controllers/cities_controller.rb:70:in `block in update'
+app/controllers/cities_controller.rb:69:in `update'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.8ms)
+Started PATCH "/cities/1" for ::1 at 2017-05-10 11:12:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Zz4FzU4noFCQm0ZW/tgyryaVBPAZqxvTBWhv40uGEP7PIQWqU6/mqMGLfrnrAaA+Gei622Ufvvfw/CeIwz5iA==", "city"=>{"name"=>"Bordeaux", "description"=>"Bordeaux est une commune du Sud-Ouest de la France, préfecture du département de la Gironde et chef-lieu de la région Nouvelle-Aquitaine. Capitale de l'ancienne Guyenne, Bordeaux, située en bordure des Landes de Gascogne, fait partie de la Gascogne.", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fa5a38a9968 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5964-si1fwm.jpg>, @original_filename="412.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"city[image]\"; filename=\"412.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update City", "id"=>"1"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `searchkick' for #<Class:0x007fa5a3ddaae0>):
+  
+app/models/city.rb:3:in `<class:City>'
+app/models/city.rb:1:in `<top (required)>'
+app/controllers/cities_controller.rb:93:in `set_city'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.2ms)
+Started PATCH "/cities/1" for ::1 at 2017-05-10 11:13:40 +0200
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Zz4FzU4noFCQm0ZW/tgyryaVBPAZqxvTBWhv40uGEP7PIQWqU6/mqMGLfrnrAaA+Gei622Ufvvfw/CeIwz5iA==", "city"=>{"name"=>"Bordeaux", "description"=>"Bordeaux est une commune du Sud-Ouest de la France, préfecture du département de la Gironde et chef-lieu de la région Nouvelle-Aquitaine. Capitale de l'ancienne Guyenne, Bordeaux, située en bordure des Landes de Gascogne, fait partie de la Gascogne.", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fa5a5029430 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5964-aswhtc.jpg>, @original_filename="412.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"city[image]\"; filename=\"412.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update City", "id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-10liwz7.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]' -auto-orient -resize "1920x1080>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/618b503831a433116c19fdb988b656a220170510-5964-119mheo'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]' -auto-orient -resize "1280x720>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/618b503831a433116c19fdb988b656a220170510-5964-1dy5lgi'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-qjn0b1.jpg[0]' -auto-orient -resize "320x260>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/618b503831a433116c19fdb988b656a220170510-5964-v0o4yt'
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/b9228e0962a78b84f3d5d92f4faa000b20170510-5964-1k1mna1.jpg'
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "cities" SET "image_updated_at" = ?, "updated_at" = ?, "image_file_name" = ? WHERE "cities"."id" = ?[0m  [["image_updated_at", 2017-05-10 09:13:41 UTC], ["updated_at", 2017-05-10 09:13:42 UTC], ["image_file_name", "412.jpg"], ["id", 1]]
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/412.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/412.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/412.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/412.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/412.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/412.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/412.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/412.jpg
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cities/1
+Completed 302 Found in 2022ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/cities/1" for ::1 at 2017-05-10 11:13:43 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ?[0m  [["city", "1"]]
+  Rendered cities/show.html.erb within layouts/application (90.4ms)
+Completed 200 OK in 368ms (Views: 360.3ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/cities/1" for ::1 at 2017-05-10 11:13:54 +0200
+Processing by CitiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Zz4FzU4noFCQm0ZW/tgyryaVBPAZqxvTBWhv40uGEP7PIQWqU6/mqMGLfrnrAaA+Gei622Ufvvfw/CeIwz5iA==", "city"=>{"name"=>"Bordeaux", "description"=>"Bordeaux est une commune du Sud-Ouest de la France, préfecture du département de la Gironde et chef-lieu de la région Nouvelle-Aquitaine. Capitale de l'ancienne Guyenne, Bordeaux, située en bordure des Landes de Gascogne, fait partie de la Gascogne.", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fa5a5ed60f0 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5964-1mb99k6.jpg>, @original_filename="16831939_788785367936922_1361846458199726080_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"city[image]\"; filename=\"16831939_788785367936922_1361846458199726080_n.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update City", "id"=>"1"}
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xu3son.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]' -auto-orient -resize "1920x1080>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/79d89cc064ef8def9a91af5b523abde620170510-5964-63mtok'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]' -auto-orient -resize "1280x720>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/79d89cc064ef8def9a91af5b523abde620170510-5964-1c2nu9d'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-xowu29.jpg[0]' -auto-orient -resize "320x260>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/79d89cc064ef8def9a91af5b523abde620170510-5964-cn6upx'
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/9fa4d423611db8945b637f54362c735020170510-5964-18oelue.jpg'
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "cities" SET "image_file_name" = ?, "image_file_size" = ?, "image_updated_at" = ?, "updated_at" = ? WHERE "cities"."id" = ?[0m  [["image_file_name", "16831939_788785367936922_1361846458199726080_n.jpg"], ["image_file_size", 42098], ["image_updated_at", 2017-05-10 09:13:54 UTC], ["updated_at", 2017-05-10 09:13:55 UTC], ["id", 1]]
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/412.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/412.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/412.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/412.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/original/16831939_788785367936922_1361846458199726080_n.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/big/16831939_788785367936922_1361846458199726080_n.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/medium/16831939_788785367936922_1361846458199726080_n.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/cities/images/000/000/001/small/16831939_788785367936922_1361846458199726080_n.jpg
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cities/1
+Completed 302 Found in 1323ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/cities/1" for ::1 at 2017-05-10 11:13:55 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ?[0m  [["city", "1"]]
+  Rendered cities/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-05-10 11:13:58 +0200
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."status" = ? LIMIT ?[0m  [["status", 2], ["LIMIT", 3]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT ?[0m  [["LIMIT", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" LIMIT ?[0m  [["LIMIT", 12]]
+  Rendered pages/home.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:14:00 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2017-05-10 11:14:05 +0200
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered recipes/_form.html.erb (14.9ms)
+  Rendered recipes/edit.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2017-05-10 11:14:05 +0200
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered recipes/_form.html.erb (5.5ms)
+  Rendered recipes/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 37ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/recipes/1" for ::1 at 2017-05-10 11:14:14 +0200
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/vD8d6gAbyGLEu6KdN3GaORbe8V2nK8nb7r8e8H3n40BcVwelJkjmzkx60cXdZ4JwTAoaqnlWpDTgaY3LPpF6Q==", "recipe"=>{"name"=>"Canelés 1", "city"=>"1", "description"=>"C:1 D:2 Se:A Smcd:d St:2 // Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "ingredients"=>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "recipe"=>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "prepare"=>"15", "cook"=>"75", "smcd"=>"dessert", "difficulty"=>"2", "season"=>"all", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fa5a0386b28 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5964-1exqe5h.jpg>, @original_filename="2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[image]\"; filename=\"2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Recipe", "id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-n8mq62.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]' -auto-orient -resize "1920x1080>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/fcf738c193a336d2a253d76205cd323b20170510-5964-1c25r70'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]' -auto-orient -resize "1280x720>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/fcf738c193a336d2a253d76205cd323b20170510-5964-j4iskl'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-141b6e1.jpg[0]' -auto-orient -resize "320x260>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/fcf738c193a336d2a253d76205cd323b20170510-5964-xfuwog'
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/218611ce105959dd5342b516a2bdd33320170510-5964-10hj4mh.jpg'
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "recipes" SET "image_file_name" = ?, "image_file_size" = ?, "image_updated_at" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["image_file_name", "2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg"], ["image_file_size", 53913], ["image_updated_at", 2017-05-10 09:14:14 UTC], ["updated_at", 2017-05-10 09:14:14 UTC], ["id", 1]]
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/original/2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/big/2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/medium/2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/small/2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 1218ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:14:15 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:14:17 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 43ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:15:25 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/show.html.erb within layouts/application (131.2ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `recipe' for #<#<Class:0x007fa5a505a058>:0x007fa5a512a5f0>
+Did you mean?  @recipe
+               recipe_url
+               @recipes):
+    2:   <h1><%= @recipe.name %></h1>
+    3:   <a href="#" class="arrow left"></a>
+    4:   <div class="container">
+    5:     <%= image_tag recipe.image.url(:small), :class => "logo__img column-center", :alt => @recipe.name %>
+    6:     <div class="right">
+    7:       <h2>Ingrédients</h2>
+    8:       <ul>
+  
+app/views/recipes/show.html.erb:5:in `_app_views_recipes_show_html_erb___1138474407277118116_70174707900320'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.8ms)
+Started GET "/recipes" for ::1 at 2017-05-10 11:15:48 +0200
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 54ms (Views: 46.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/recipes" for ::1 at 2017-05-10 11:15:49 +0200
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:16:30 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:16:47 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:17:25 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2017-05-10 11:17:28 +0200
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered recipes/_form.html.erb (5.2ms)
+  Rendered recipes/edit.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2017-05-10 11:17:28 +0200
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered recipes/_form.html.erb (7.7ms)
+  Rendered recipes/edit.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/recipes/1" for ::1 at 2017-05-10 11:17:34 +0200
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mLvwvTaAhrAjYY1wt2JOrpojdMO6JDgxcKbYxN2QUxxnOlDUChnKCpFCiL3UyhbPv0gnbGVdzYbMnYKIMJ2JeA==", "recipe"=>{"name"=>"Canelés 1", "city"=>"1", "description"=>"C:1 D:2 Se:A Smcd:d St:2 // Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "ingredients"=>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "recipe"=>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "prepare"=>"15", "cook"=>"75", "smcd"=>"dessert", "difficulty"=>"2", "season"=>"all", "status"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fa59f21b2f8 @tempfile=#<Tempfile:/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/RackMultipart20170510-5964-1m0a5vp.jpg>, @original_filename="574bfd1768fb1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[image]\"; filename=\"574bfd1768fb1.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Recipe", "id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-fqbnp7.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]' -auto-orient -resize "1920x1080>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/f6cb3f67c735e71b2aee19fd3be5b45520170510-5964-w5sj7i'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]' -auto-orient -resize "1280x720>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/f6cb3f67c735e71b2aee19fd3be5b45520170510-5964-1ti6qza'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]'
+Command :: convert '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-127aok1.jpg[0]' -auto-orient -resize "320x260>" '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/f6cb3f67c735e71b2aee19fd3be5b45520170510-5964-6yg3ml'
+Command :: file -b --mime '/var/folders/z2/6lkyh8l92y104s0rzhjr_3sh0000gn/T/802ac5881a63425d5fc466dc281ac70420170510-5964-wdn969.jpg'
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "recipes" SET "image_file_name" = ?, "image_file_size" = ?, "image_updated_at" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["image_file_name", "574bfd1768fb1.jpg"], ["image_file_size", 387264], ["image_updated_at", 2017-05-10 09:17:34 UTC], ["updated_at", 2017-05-10 09:17:35 UTC], ["id", 1]]
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/original/2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/big/2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/medium/2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg
+[paperclip] deleting /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/small/2048x1536-fit_jean-luc-melenchon-meeting-pres-chateauroux-2-avril-2017.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/original/574bfd1768fb1.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/big/574bfd1768fb1.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/medium/574bfd1768fb1.jpg
+[paperclip] saving /Users/bastien/Documents/WWW/iut-www/tradfood/public/system/recipes/images/000/000/001/small/574bfd1768fb1.jpg
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 2037ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:17:36 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:22:47 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 79ms (Views: 62.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/null" for ::1 at 2017-05-10 11:23:37 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"null"}
+  [1m[36mRecipe Load (2.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=null):
+  
+app/controllers/recipes_controller.rb:69:in `set_recipe'
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.5ms)
