@@ -9,7 +9,6 @@
   <%= f.input :season, label: "Saison", collection: {'Tout' => 'all','Ete' => 'summer','Automne' => 'automn','Printemps' => 'sping', 'Hiver' => 'winter'}, html: {id: "season"}, input_html: {name: "season"}, selected: params[:season], required: false %>
   <%= f.submit 'Trier' %>
 <% end %>
-<%= @search %>
 <br>
 <a href="https://twitter.com/intent/tweet?text=J'adore%20cette%20recette%20!&url=<%= @currentURL %>&via=tradfood" target="_blank">Twitter !</a>
 <!-- FACEBOOK : This is for local dev (remove it onprod) -->
