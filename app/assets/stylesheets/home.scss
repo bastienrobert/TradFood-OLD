@@ -4,7 +4,7 @@ INDEX PAGE
 #index {
   margin-top: -70px;
   .head {
-    background: url(homepage.png);
+    background-image: url(asset_path('homepage.png'));
     background-size: cover;
     height: 520px;
     padding-top: 100px;
