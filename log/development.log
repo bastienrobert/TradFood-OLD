@@ -42333,3 +42333,49 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 238ms (Views: 235.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:49:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 253ms (Views: 221.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/about" for ::1 at 2017-05-10 11:50:13 +0200
+Processing by PagesController#about as HTML
+  Parameters: {"about"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cities" for ::1 at 2017-05-10 11:50:14 +0200
+Processing by CitiesController#index as HTML
+  Rendering cities/index.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered cities/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 71ms (Views: 65.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cities/1" for ::1 at 2017-05-10 11:50:15 +0200
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."city" = ?[0m  [["city", "1"]]
+  Rendered cities/show.html.erb within layouts/application (71.5ms)
+Completed 200 OK in 97ms (Views: 93.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes/1" for ::1 at 2017-05-10 11:50:18 +0200
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.1ms)
+
+
