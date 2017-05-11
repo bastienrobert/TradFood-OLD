@@ -1,7 +1,8 @@
 /* ------------------
 INDEX PAGE
 ------------------ */
-#index {
+#index,
+.city {
   margin-top: -70px;
   .head {
     background-image: url(asset_path('homepage.png'));
@@ -22,7 +23,8 @@ INDEX PAGE
 }
 
 /* Search bar */
-#index .search {
+#index .search,
+.city .search {
   width: 65%;
   margin: 0 auto;
   transform: translateY(-50%);
@@ -75,7 +77,8 @@ INDEX PAGE
     }
   }
 }
-#index .search .search-bar input[type="submit"] {
+#index .search .search-bar input[type="submit"],
+.city .search .search-bar input[type="submit"] {
   border-radius: 5px;
   transform: translateY(40%);
   float: right;
@@ -83,33 +86,35 @@ INDEX PAGE
   color: #4F4F4F;
   border-color: #FF9C7B;
   margin-right: 20px;
-}
-#index .search .search-bar input[type="submit"]:hover {
-  background-color: #FF9C7B;
-  color: #fff;
+  &:hover {
+    background-color: #FF9C7B;
+    color: #fff;
+  }
 }
 /* Responsive search bar */
 #index .search .search-bar__mob {
   width: 100%;
   display: none;
-}
-#index .search .search-bar__mob input[type="text"] {
-  width: 90%;
-  padding: 7px 15px;
-  border: 1px solid #dce0e0;
-  border-radius: 7px;
-  box-shadow: 0 1px 3px 0 #dce0e0;
-  font-size: 1.2em;
-}
-#index .search .search-bar__mob input[type="submit"] {
-  display: none;
+  input[type="text"] {
+    width: 90%;
+    padding: 7px 15px;
+    border: 1px solid #dce0e0;
+    border-radius: 7px;
+    box-shadow: 0 1px 3px 0 #dce0e0;
+    font-size: 1.2em;
+  }
+  input[type="submit"] {
+    display: none;
+  }
 }
 /* Media queries for search-bar */
 @media only screen and (max-width : 1000px) {
-  #index .head {
+  #index .head,
+  .city .head {
     padding-top: 150px;
   }
-  #index .search .search-bar {
+  #index .search .search-bar,
+  .city .search .search-bar {
     padding-left: 5px;
     input[type="submit"] {
       margin-right: 7px;
@@ -117,10 +122,12 @@ INDEX PAGE
   }
 }
 @media only screen and (max-width : 750px) {
-  #index .search .search-bar__mob {
+  #index .search .search-bar__mob
+  .city .search .search-bar__mob {
     display: block;
   }
-  #index .search .search-bar {
+  #index .search .search-bar,
+  .city .search .search-bar__mob {
     display: none;
   }
 }

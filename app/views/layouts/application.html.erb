@@ -18,7 +18,7 @@
         <div class="logo"><a href="/"><%= image_tag image_path('logo-orange.svg'), :class => "logo__img column-center" %></a></div>
         <ul class="menu">
           <%= link_to root_path do %><li>Accueil</li><% end %>
-          <%= link_to cities_path do %><% unless (current_page?('/') || current_page?('/about')) %><li class="active"><% else %><li><% end %>Villes</li><% end %>
+          <%= link_to city_path(1) do %><% unless (current_page?('/') || current_page?('/about')) %><li class="active"><% else %><li><% end %>Villes</li><% end %>
           <a href="/about"><% if current_page?('/about') %><li class="active"><% else %><li><% end %>A propos</li></a>
         </ul>
       </div>

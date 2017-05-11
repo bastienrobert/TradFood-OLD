@@ -88,3 +88,6 @@ header#home {
   background-color: transparentize(#191F31, .25);
   box-shadow: 14px 0px 20px 13px transparentize(#000, .5);
 }
+header#home .row {
+  border-bottom: 0;
+}

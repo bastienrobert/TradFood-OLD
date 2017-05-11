@@ -1,25 +1,60 @@
-<p id="notice"><%= notice %></p>
-<br>
-<!-- <% puts @currentURL %> -->
+<section class="city">
+  <div class="head">
+    <h1>Recettes sur <%= @city.name %></h1>
+  </div>
+  </div>
+  <div class="search">
+    <%= simple_form_for :search, html: {class: "search-bar"}, method: :get do |f| %>
+      <div class="field for-type">
+        <%= f.input :smcd, label: "Type", collection: {'Tout' => 'all','Entrée' => 'starter','Plat' => 'mainCourse','Dessert' => 'dessert'}, html: {id: "type"}, input_html: {name: "smcd"}, selected: params[:smcd], required: false %>
+      </div>
+      <div class="field for-type">
+        <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 1,'Moyen' => 2,'Difficile' => 3}, html: {id: "difficulty"}, input_html: {name: "difficulty"}, selected: params[:difficulty], required: false %>
+      </div>
+      <div class="field for-type">
+        <%= f.input :season, label: "Saison", collection: {'Tout' => 'all','Ete' => 'summer','Automne' => 'automn','Printemps' => 'sping', 'Hiver' => 'winter'}, html: {id: "season"}, input_html: {name: "season"}, selected: params[:season], required: false %>
+      </div>
+      <%= f.submit 'Filtrer', class: "button" %>
+    <% end %>
+  </div>
+  <h2>Galerie</h2>
+  <div class="recipes">
+    <div class="container">
+      <% if @recipes %>
+        <% @recipes.each do |recipe| %>
+          <div id="card">
+            <div class="content" style="background-image: url(<%= recipe.image.url(:big); %>)">
+              <div class="infos">
+                <h3><%= recipe.name %></h3>
+                <div class="details">
+                  <span class="icon star"></span><b><%= recipe.difficulty %></b>
+                  <span class="icon leaf"></span><b><%= recipe.season %></b>
+                  <span class="icon cook"></span><b><%= recipe.cook %></b>
+                </div>
+                <%= link_to 'Voir la recette', recipe %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% else %>
+          <h5>Aucun résultat</h5>
+      <% end %>
+    </div>
+  </div>
+</section>
 
-<!-- HERE : REMOVE QUOTES AROUND @search[:parameter] -->
-<%= simple_form_for :search, method: :get do |f| %>
-  <%= f.input :smcd, label: "Type", collection: {'Tout' => 'all','Entrée' => 'starter','Plat' => 'mainCourse','Dessert' => 'dessert'}, html: {id: "type"}, input_html: {name: "smcd"}, selected: params[:smcd], required: false %>
-  <%= f.input :difficulty, label: "Difficulté", collection: {'Tout' => 'all','Facile' => 1,'Moyen' => 2,'Difficile' => 3}, html: {id: "difficulty"}, input_html: {name: "difficulty"}, selected: params[:difficulty], required: false %>
-  <%= f.input :season, label: "Saison", collection: {'Tout' => 'all','Ete' => 'summer','Automne' => 'automn','Printemps' => 'sping', 'Hiver' => 'winter'}, html: {id: "season"}, input_html: {name: "season"}, selected: params[:season], required: false %>
-  <%= f.submit 'Trier' %>
-<% end %>
-<br>
-<a href="https://twitter.com/intent/tweet?text=J'adore%20cette%20recette%20!&url=<%= @currentURL %>&via=tradfood" target="_blank">Twitter !</a>
+
+<p id="notice"><%= notice %></p>
+<!-- <a href="https://twitter.com/intent/tweet?text=J'adore%20cette%20recette%20!&url=<%= @currentURL %>&via=tradfood" target="_blank">Twitter !</a> -->
 <!-- FACEBOOK : This is for local dev (remove it onprod) -->
-<a href="https://www.facebook.com/dialog/share?
+<!-- <a href="https://www.facebook.com/dialog/share?
 app_id=145634995501895
 &display=page
-&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer" target="_blank">Facebook !</a>
+&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer" target="_blank">Facebook !</a> -->
 <!-- FACEBOOK : This is for production -->
 <!-- <a href="https://www.facebook.com/dialog/share?app_id=217102868749055&quote=J'adore%20cette%20recette%20!&display=page&hashtag=tradfood,gastronomie,traditionnel&href=<%= @currentURL %>&redirect_uri=https://tradfood.fr" target="_blank">Facebook !</a> -->
-<br>
-<p>
+
+<!-- <p>
   <strong>Name:</strong>
   <%= @city.name %>
 </p>
@@ -37,33 +72,10 @@ app_id=145634995501895
 <p>
   <strong>Image:</strong><br>
   <%= image_tag @city.image.url(:small) %>
-</p>
+</p> -->
 
-<br>
-<br>
-<br>
-<br>
-<br>
-
+<!--
 <table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>City</th>
-      <th>Description</th>
-      <th>Ingredients</th>
-      <th>Recipe</th>
-      <th>Prepare</th>
-      <th>Cook</th>
-      <th>SMCD</th>
-      <th>Difficulty</th>
-      <th>Season</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
@@ -89,4 +101,4 @@ app_id=145634995501895
 
 
 <%= link_to 'Edit', edit_city_path(@city) %> |
-<%= link_to 'Back', cities_path %>
+<%= link_to 'Back', cities_path %> -->
