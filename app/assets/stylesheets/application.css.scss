@@ -14,7 +14,9 @@
 *= require_self
 */
 
-@import "cities";
-@import "recipes";
+@import "core/header";
 @import "core/footer";
 @import "core/mixins";
+@import "about";
+@import "cities";
+@import "recipes";

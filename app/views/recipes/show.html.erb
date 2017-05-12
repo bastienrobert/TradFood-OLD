@@ -6,11 +6,11 @@
     <div class="right">
       <h2>Ingrédients</h2>
       <ul>
-        <li><%= @recipe.ingredients %></li>
+        <%= raw @recipe.ingredients %>
       </ul>
       <hr>
       <h2>Recette</h2>
-      <p><%= @recipe.recipe %></p>
+      <%= raw @recipe.recipe %>
     </div>
   </div>
   <a href="#" class="arrow right"></a>

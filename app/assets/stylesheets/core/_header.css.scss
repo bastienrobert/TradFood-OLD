@@ -44,7 +44,6 @@ header {
 
 @media (max-width: 1000px) {
   header {
-    height: 290px;
     .logo {
         position: relative;
         margin-bottom: .5em;
@@ -61,18 +60,8 @@ header {
       }
       li {
         float: initial;
-        // &:hover {
-        //     border: none;
-        //     margin: 5px 25px;
-        //     padding: 2px 11px;
-        // }
       }
     }
-    // .active:hover {
-    //     border: 2px solid #fff !important;
-    //     padding: 5px 9px !important;
-    //     margin: 0 25px !important;
-    // }
     .section__event .down {
         top: 340px;
     }
@@ -87,7 +76,7 @@ header {
 header#home {
   background-color: transparentize(#191F31, .25);
   box-shadow: 14px 0px 20px 13px transparentize(#000, .5);
-}
-header#home .row {
-  border-bottom: 0;
+  .row {
+    border-bottom: 0;
+  }
 }
