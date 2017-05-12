@@ -39,6 +39,10 @@ header {
   }
   .active {
       color: #000!important;
+      &.underline {
+        color: inherit!important;
+        text-decoration: underline;
+      }
   }
 }
 
