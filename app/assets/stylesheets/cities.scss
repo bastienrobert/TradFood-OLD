@@ -39,9 +39,6 @@
         font-family: Hind, open-sans, sans-serif;
         margin: 3em 0;
         transition: transform .3s;
-        &:hover {
-          transform: translateX(-5em);
-        }
         .content {
           min-height: 17em;
           background-repeat: no-repeat;
@@ -109,6 +106,30 @@
         text-align: center;
         margin-bottom: 4em;
         font-size: 2em;
+      }
+    }
+  }
+  @media only screen and (min-width: 750px) {
+    .recipes #card {
+      &:hover {
+        transform: translateX(-5em);
+      }
+    }
+  }
+  @media only screen and (max-width: 750px) {
+    .recipes {
+      .container {
+        width: 70%;
+      }
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    .recipes {
+      .container {
+        #card .infos {
+          padding: .8em 0em 2.3em 0em;
+          width: 100%;
+        }
       }
     }
   }

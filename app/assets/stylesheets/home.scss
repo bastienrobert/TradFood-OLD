@@ -91,22 +91,6 @@ INDEX PAGE
     color: #fff;
   }
 }
-/* Responsive search bar */
-#index .search .search-bar__mob {
-  width: 100%;
-  display: none;
-  input[type="text"] {
-    width: 90%;
-    padding: 7px 15px;
-    border: 1px solid #dce0e0;
-    border-radius: 7px;
-    box-shadow: 0 1px 3px 0 #dce0e0;
-    font-size: 1.2em;
-  }
-  input[type="submit"] {
-    display: none;
-  }
-}
 /* Media queries for search-bar */
 @media only screen and (max-width : 1000px) {
   #index .head,
@@ -121,14 +105,10 @@ INDEX PAGE
     }
   }
 }
-@media only screen and (max-width : 750px) {
-  #index .search .search-bar__mob
-  .city .search .search-bar__mob {
-    display: block;
-  }
-  #index .search .search-bar,
-  .city .search .search-bar__mob {
-    display: none;
+@media only screen and (max-width : 480px) {
+  #index .search,
+  .city .search {
+    width: 95%;
   }
 }
 
@@ -299,6 +279,18 @@ INDEX CASES
   }
 }
 @media only screen and (max-width : 750px) {
+  .cases.top-recipes {
+    .container {
+      a {
+        background-color: transparent;
+        box-shadow: none;
+      }
+      .on-hover ul {
+        transform: translateY(0);
+        margin-top: 0;
+      }
+    }
+  }
   .cases.random-recipes {
     .container {
       a:nth-child(n + 7) {
