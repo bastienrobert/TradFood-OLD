@@ -71,9 +71,40 @@ header {
     }
   }
 }
+@media (max-width : 750px) {
+  header {
+    .logo {
+      margin-left: 10px;
+      width: 45%;
+    }
+    .menu {
+      a {
+        &:first-child {
+          display: none;
+        }
+        li {
+          margin: 5px 10px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 450px) {
     .menu {
         width: 98%;
+    }
+}
+@media (max-width : 370px) {
+    header {
+        .logo img {
+            height: 29px;
+            margin-top: 6px;
+        }
+        .menu {
+            a li {
+                margin: 5px;
+            }
+        }
     }
 }
 
