@@ -29,47 +29,69 @@
 
   <div class="field">
     <%= f.label :description %><br>
+    <p><em>Format : </em>encadrer les paragraphes par &#60;p&#62;&#60;/p&#62;</p><br>
     <%= f.text_area :description, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :ingredients %><br>
+    <p><em>Format : </em>encadrer les paragraphes par &#60;li&#62;&#60;/li&#62;</p><br>
     <%= f.text_area :ingredients, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :recipe %><br>
+    <p><em>Format : </em>encadrer les paragraphes par &#60;p&#62;&#60;/p&#62;</p><br>
     <%= f.text_area :recipe, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :prepare %><br>
+    <p><b>Format : </b>en minutes</p><br>
     <%= f.number_field :prepare, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :cook %><br>
+    <p><b>Format : </b>en minutes</p><br>
     <%= f.number_field :cook, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :smcd %><br>
-    <%= f.text_field :smcd, required: true %>
+    <%= f.select(:smcd) do %>
+      <% [['Entrée', 'starter'], ['Plat', 'mainCourse'], ['Dessert', 'dessert']].each do |c, d| -%>
+        <%= content_tag(:option, c, value: d) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.label :difficulty %><br>
-    <%= f.number_field :difficulty, required: true %>
+    <%= f.select(:difficulty) do %>
+      <% [['Facile', 1], ['Moyen', 2], ['Difficile', 3]].each do |c, d| -%>
+        <%= content_tag(:option, c, value: d) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.label :season %><br>
-    <%= f.text_field :season, required: true %>
+    <%= f.select(:season) do %>
+      <% [['Été', 'summer'], ['Automne', 'automn'], ['Hiver', 'winter'], ['Printemps', 'spring']].each do |c, d| -%>
+        <%= content_tag(:option, c, value: d) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.number_field :status, required: true %>
+    <p>Rien ne marche SAUF mis-en-avant</p>
+    <%= f.select(:status) do %>
+      <% [['Brouillon', 0], ['Publié', 1], ['Mis en avant', 2], ['Supprimé', 3]].each do |c, d| -%>
+        <%= content_tag(:option, c, value: d) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">
