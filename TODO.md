@@ -1,12 +1,11 @@
 # TODO
 ## Just a simple markdown file to see what I have to do
 
-### Talk with UX team
-- What about responsive ??
+-> Check BUG_TRACKER.md : URGENT
 
-### Reorganize DB
-- For recipe/ingredients : it should be a list
-
-### Nota benne (WOW, I SPEAK LATIN)
-- Don't forget to import fonts
+- Import fonts
 - Make a default image for when it's missing
+- Image compression @ auto-compression
+- SEO to improve
+- About page
+- Set &copy;TradFood 2017 (automatic setting) on the footer
