@@ -2,4 +2,4 @@
 ## /!\ Bugs zone
 
 ### URGENT
-- Filters problem : all the filter system is buged
+- Image on recipes#show : FRONT - Uggly
