@@ -5,7 +5,9 @@
 
 - Import fonts
 - Make a default image for when it's missing
-- Image compression @ auto-compression
 - SEO to improve
+	- Check the report
+	- Image compression
+	- Keyworks analytic
 - About page
 - Routes
