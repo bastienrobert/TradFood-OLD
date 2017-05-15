@@ -27,9 +27,9 @@
               <div class="infos">
                 <h3><%= recipe.name %></h3>
                 <div class="details">
-                  <span class="icon star"></span><b><%= recipe.difficulty %></b>
-                  <span class="icon leaf"></span><b><%= recipe.season %></b>
-                  <span class="icon cook"></span><b><%= recipe.cook %></b>
+                  <span class="icon star"></span><b><%= recipe.difficulty?(recipe.difficulty) %></b>
+                  <span class="icon leaf"></span><b><%= recipe.season?(recipe.season) %></b>
+                  <span class="icon cook"></span><b><%= recipe.cook_time?(recipe.cook) %></b>
                 </div>
                 <%= link_to 'Voir la recette', recipe %>
               </div>
