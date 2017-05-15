@@ -57,7 +57,7 @@
     </header>
     <%= yield %>
     <footer>
-      <div class="left">&copy;Trad'Food 2016</div>
+      <div class="left">&copy;Trad'Food <%= Time.current.year %></div>
       <div class="right">
           <a href="#">Conditions générales et confidentialité</a>
           <a href="#" class="social-icons"><%= image_tag image_path('icons/facebook.svg') %></a>

@@ -8,4 +8,4 @@
 - Image compression @ auto-compression
 - SEO to improve
 - About page
-- Set &copy;TradFood 2017 (automatic setting) on the footer
+- Routes
