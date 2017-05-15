@@ -18,6 +18,7 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
       width: calc(3.5*(100%/8));
       height: auto;
+      object-fit: cover;
     }
     .right {
       padding: 1.5em 2em;
