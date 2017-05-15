@@ -27,14 +27,12 @@ header {
       li {
         display: inline-block;
         margin: 5px 30px;
-        color: #FF9C7B;
         padding: 2px 2px;
         transition: 0;
         font-weight: 400;
-        // &:focus,
-        // &:hover {
-        //   border-bottom: 2px solid #FF9C7B;
-        // }
+        a {
+          color: #FF9C7B;
+        }
       }
   }
   .active {

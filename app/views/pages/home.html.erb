@@ -2,7 +2,6 @@
   <div class="head">
     <h1>Découvrez<br>les meilleurs plats<br>traditionnels Bordelais</h1>
   </div>
-  </div>
   <div class="search">
 
     <%= simple_form_for :search, html: {class: "search-bar"}, url: cities_search_path do |f| %>
@@ -42,7 +41,7 @@
 						<div class="on-hover">
               <div class="infos">
                 <ul>
-    							<strong><li><%= recipe.name %></li></strong>
+    							<li><strong><%= recipe.name %></strong></li>
     						</ul>
               </div>
 						</div>
