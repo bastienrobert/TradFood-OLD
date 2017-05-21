@@ -1,2 +1,4 @@
-config/local_env.yml
 /config/local_env.yml
+/log/
+/tmp/
+/db/*.sqlite3
