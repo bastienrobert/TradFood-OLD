@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @recipes = Recipe.all
+    @cardimage = @recipe.image.url(:medium)
   end
 
   # GET /recipes/new

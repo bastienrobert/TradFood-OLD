@@ -1,7 +1,7 @@
 <section class="city">
   <div class="head">
-    <h1>Recettes sur <%= @city.name %></h1>
-  </div>
+    <% content_for :title, @pagetitle = "Recettes sur " + @city.name %>
+    <h1><%= @pagetitle %></h1>
   </div>
   <div class="search">
     <%= simple_form_for :search, html: {class: "search-bar"}, method: :get do |f| %>

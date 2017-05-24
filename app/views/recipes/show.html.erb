@@ -1,5 +1,6 @@
 <section id="recipe">
   <h1><%= @recipe.name %></h1>
+  <% content_for :title, "Recette " + @recipe.name + " | Trad'Food, manger et cuisiner" %>
   <a href="#" class="arrow left"></a>
   <div class="container">
     <%= image_tag @recipe.image.url(:medium), :class => "logo__img column-center", :alt => @recipe.name %>
