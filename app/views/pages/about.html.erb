@@ -1,16 +1,17 @@
   <section id="about">
-    <h1><%= content_for(:title, "A props de Trad'Food") %></h1>
+    <% content_for :title, @pagetitle = "A propos de Trad'Food" %>
+    <h1><%= @pagetitle %></h1>
     <h2>Qui sommes-nous ?</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum exercitationem cumque rem animi aliquid soluta porro iusto sequi nostrum accusamus illum necessitatibus tempore repudiandae, consectetur ipsa reiciendis eum consequatur. Deleniti.</p>
     <h2>Pourquoi Trad'Food</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo deserunt unde officia dolorum modi quaerat debitis. Iste inventore id amet corporis veritatis sequi repellat molestias blanditiis consequuntur. Amet, sit, ea!</p>
     <h2>L'équipe</h2>
     <ul>
-      <a href="#"><li>Prénom Nom</li></a>
-      <a href="#"><li>Prénom Nom</li></a>
-      <a href="#"><li>Prénom Nom</li></a>
-      <a href="#"><li>Prénom Nom</li></a>
-      <a href="#"><li>Prénom Nom</li></a>
-      <a href="#"><li>Prénom Nom</li></a>
+      <li><a href="#">Prénom Nom</a></li>
+      <li><a href="#">Prénom Nom</a></li>
+      <li><a href="#">Prénom Nom</a></li>
+      <li><a href="#">Prénom Nom</a></li>
+      <li><a href="#">Prénom Nom</a></li>
+      <li><a href="#">Prénom Nom</a></li>
     </ul>
   </section>

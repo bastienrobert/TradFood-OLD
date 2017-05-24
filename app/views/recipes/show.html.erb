@@ -6,9 +6,7 @@
     <%= image_tag @recipe.image.url(:medium), :class => "logo__img column-center", :alt => @recipe.name %>
     <div class="right">
       <h2>Ingrédients</h2>
-      <ul>
         <%= raw @recipe.ingredients %>
-      </ul>
       <hr>
       <h2>Recette</h2>
       <%= raw @recipe.recipe %>

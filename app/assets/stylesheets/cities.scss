@@ -35,7 +35,7 @@
       width: 48%;
       margin: 2em auto 0;
       transform: translateX(-1.8em);
-      #card {
+      .card {
         width: 100%;
         display: inline-block;
         background: #FFF;
@@ -115,7 +115,7 @@
     }
   }
   @media only screen and (min-width: 750px) {
-    .recipes #card {
+    .recipes .card {
       &:hover {
         transform: translateX(-5em);
       }
@@ -131,7 +131,7 @@
   @media only screen and (max-width: 480px) {
     .recipes {
       .container {
-        #card .infos {
+        .card .infos {
           padding: .8em 0em 2.3em 0em;
           width: 100%;
         }

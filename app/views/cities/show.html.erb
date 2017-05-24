@@ -22,7 +22,7 @@
     <div class="container">
       <% if @recipes %>
         <% @recipes.each do |recipe| %>
-          <div id="card">
+          <div class="card">
             <div class="content" style="background-image: url(<%= recipe.image.url(:big); %>)">
               <div class="infos">
                 <h3><%= recipe.name %></h3>
