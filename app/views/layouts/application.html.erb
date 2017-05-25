@@ -25,7 +25,6 @@
     <meta property="og:title" content="<%= yield(:title) %>">
     <meta property="og:type" content="restaurant">
     <meta property="og:url" content="https://tradfood.fr/">
-
     <meta property="og:image" content="<%= @cardimage %>">
     <meta property="og:description" content="Découvrez avec Trad'Food les meilleurs plats traditionnels de Bordeaux">
     <meta property="og:email" content="contact@tradfood.fr">
@@ -63,11 +62,11 @@
     <footer>
       <div class="left">&copy;Trad'Food <%= Time.current.year %></div>
       <div class="right">
-          <a href="#">Conditions générales et confidentialité</a>
-          <a href="#" class="social-icons"><%= image_tag image_path('icons/facebook.svg') %></a>
-          <a href="#" class="social-icons"><%= image_tag image_path('icons/twitter.svg') %></a>
-          <a href="#" class="social-icons"><%= image_tag image_path('icons/instagram.svg') %></a>
-          <a href="#" class="social-icons"><%= image_tag image_path('icons/pinterest.svg') %></a>
+          <a href="/about">Conditions générales et confidentialité</a>
+          <a href="https://www.facebook.com/tradfoodfr/" class="social-icons"><%= image_tag image_path('icons/facebook.svg') %></a>
+          <a href="https://twitter.com/TradFood" class="social-icons"><%= image_tag image_path('icons/twitter.svg') %></a>
+          <!-- <a href="#" class="social-icons"><%= image_tag image_path('icons/instagram.svg') %></a>
+          <a href="#" class="social-icons"><%= image_tag image_path('icons/pinterest.svg') %></a> -->
       </div>
     </footer>
   </body>
